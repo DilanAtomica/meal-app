@@ -15,12 +15,18 @@
 
 .frontPage-startButtons {
     margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
 }
 
 .frontPage-startButtons > button {
     padding: 1rem;
     font-size: 1rem;
     font-weight: 700;
-    margin: 0 1rem;
+    margin: 1rem;
     width: 10rem;
+    display: block;
 }
