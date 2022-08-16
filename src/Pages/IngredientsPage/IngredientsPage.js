@@ -69,8 +69,13 @@ function IngredientsPage(props) {
 
     const getRecipes = () => {
         let ingredients = "";
+        console.log(addedIngredients.length)
         for(let i = 0; i < addedIngredients.length; i++) {
-            ingredients = ingredients + addedIngredients[i].name + ",";
+            if(i === addedIngredients.length - 1) {
+                ingredients = ingredients + addedIngredients[i].name;
+            } else {
+                ingredients = ingredients + addedIngredients[i].name + ",";
+            }
         }
 
         navigate("/recipes/" + ingredients);
