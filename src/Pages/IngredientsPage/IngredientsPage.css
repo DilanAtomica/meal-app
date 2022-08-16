@@ -34,7 +34,7 @@
 
 .autoCompletedIngredients {
     position: absolute;
-    width: 50%;
+    width: calc(50% + 2rem);
     background-color: white;
     z-index: 5;
     height: max-content;
@@ -67,9 +67,10 @@
 
 .autoCompletedIngredients > button > img {
     object-fit: contain;
-    height: 1rem;
+    height: 1.5rem;
     width: auto;
     margin-left: 0.5rem;
+    border-radius: 50px;
 }
 
 .addedIngredients {
@@ -77,21 +78,24 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .ingredient {
     width: max-content;
     height: max-content;
-    padding: 0.25rem;
     margin: 0.5rem;
-    outline: solid lightgreen;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .ingredient > img {
     object-fit: contain;
-    width: 4rem;
-    height: auto;
+    width: auto;
+    height: 4rem;
 }
 
 .ingredientTag {
