@@ -12,6 +12,7 @@ function App() {
           <Route path="/" element={<> <FrontPage /> </>} />
           <Route path="/ingredients" element={<> <IngredientsPage /> </>} />
           <Route path="/nutrients" element={<> <NutrientsPage /> </>} />
+            <Route path="/recipes/:apiUrl" element={<>  </>} />
         </Routes>
       </BrowserRouter>
     </div>

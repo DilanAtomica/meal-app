@@ -79,6 +79,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 1rem;
+    font-size: 0.8rem;
 }
 
 .ingredient {
@@ -111,4 +112,18 @@
     width: max-content;
     border-radius: 50px;
     color: #CA1929;
+}
+
+.findRecipeButton {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: lightgray;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.findRecipeButton:hover {
+    background-color: gray;
 }

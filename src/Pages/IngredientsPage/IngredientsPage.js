@@ -3,8 +3,11 @@ import "./IngredientsPage.css";
 import { TiDelete } from 'react-icons/ti';
 import {AiOutlinePlus} from 'react-icons/ai'
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function IngredientsPage(props) {
+
+    let navigate = useNavigate();
 
     const [searchedIngredients, setSearchedIngredients] = useState([]);
 
@@ -47,7 +50,6 @@ function IngredientsPage(props) {
         const ingredientName = e.target.getAttribute("data-name");
         const ingredientImage = e.target.getAttribute("data-image");
         if(ingredientName === null) return
-        console.log(ingredientName);
 
         setAddedIngredients([...addedIngredients,
              {
@@ -63,6 +65,18 @@ function IngredientsPage(props) {
             return ingredient.name !== ingredientName;
         });
         setAddedIngredients(newList);
+    }
+
+    const getRecipes = () => {
+        let ingredients = "";
+        for(let i = 0; i < addedIngredients.length - 1; i++) {
+            ingredients = ingredients + addedIngredients[i].name + ",";
+        }
+
+        const apiUrl = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredients +
+            "&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
+
+        navigate("/ingredients/" + apiUrl);
     }
 
     return (
@@ -92,6 +106,8 @@ function IngredientsPage(props) {
                     ))}
 
                 </div>
+
+                <button onClick={getRecipes} className="findRecipeButton">Find Recipe</button>
             </div>
         </div>
     );
