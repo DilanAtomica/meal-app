@@ -69,14 +69,11 @@ function IngredientsPage(props) {
 
     const getRecipes = () => {
         let ingredients = "";
-        for(let i = 0; i < addedIngredients.length - 1; i++) {
+        for(let i = 0; i < addedIngredients.length; i++) {
             ingredients = ingredients + addedIngredients[i].name + ",";
         }
 
-        const apiUrl = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredients +
-            "&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
-
-        navigate("/ingredients/" + apiUrl);
+        navigate("/recipes/" + ingredients);
     }
 
     return (
