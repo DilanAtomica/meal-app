@@ -34,6 +34,7 @@ function IngredientsPage(props) {
                         {searchedIngredients?.map(ingredient => (
                             <button className="addIngredientButton">
                                 <span className="addIngredientIcon"><AiOutlinePlus /></span>{ingredient.name}
+                                <img src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient.image} />
                             </button>
                         ))}
                     </div>
