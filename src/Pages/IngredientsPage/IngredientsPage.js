@@ -55,6 +55,14 @@ function IngredientsPage(props) {
                 image: ingredientImage
             }
         ])
+    };
+
+    const removeIngredient = (e) => {
+        const ingredientName = e.currentTarget.getAttribute("data-name");
+        const newList = addedIngredients.filter((ingredient) => {
+            return ingredient.name !== ingredientName;
+        });
+        setAddedIngredients(newList);
     }
 
     return (
@@ -78,7 +86,7 @@ function IngredientsPage(props) {
                         <div key={ingredient.name} className="ingredient">
                             <img src={ingredient.image} />
                             <div className="ingredientTag">
-                                {ingredient.name}<button type="button" className="deleteIcon"><TiDelete /></button>
+                                {ingredient.name}<button data-name={ingredient.name} onClick={removeIngredient} type="button" className="deleteIcon"><TiDelete /></button>
                             </div>
                         </div>
                     ))}
