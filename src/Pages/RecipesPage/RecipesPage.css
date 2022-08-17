@@ -1,3 +1,43 @@
 .recipesPage {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.recipesContainer {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recipe {
+    display: flex;
+    width: 30rem;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+
+.recipe > img {
+    object-fit: contain;
+    width: auto;
+    height: 8rem;
+    border-radius: 5px;
+}
+
+.recipeInfo {
+    width: 30rem;
+    padding: 0.5rem;
+}
+
+.recipeInfo > h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.recipeInfo > p {
+    font-size: 0.8rem;
+    padding-top: 1rem;
+    color: rgba(79, 80, 90, 0.6);
 }

@@ -85,7 +85,7 @@ function IngredientsPage(props) {
         <div className="ingredientsPage">
             <div className="ingredientsContainer">
                 <div className="searchContainer">
-                    <input value={searchInput} onChange={getIngredient} type="text" />
+                    <input value={searchInput} onChange={getIngredient} type="text" placeholder="Add ingredients..." />
                     <div className="autoCompletedIngredients">
                         {searchedIngredients?.map(ingredient => (
                             <button data-name={ingredient.name}

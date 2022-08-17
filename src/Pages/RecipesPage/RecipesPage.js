@@ -28,7 +28,21 @@ function RecipesPage(props) {
 
     return (
         <div className="recipesPage">
+            <div className="recipesContainer">
 
+                {recipes?.map(recipe => (
+                    <div key={recipe?.id} className="recipe">
+                        <img src={recipe?.image} />
+                        <div className="recipeInfo">
+                            <h2>{recipe?.title}</h2>
+                            <p>This recipe includes {recipe?.usedIngredientCount} of your ingredients</p>
+                            <p>You're missing {recipe?.missedIngredientCount} ingredients for this recipe</p>
+                        </div>
+                    </div>
+                ))}
+
+
+            </div>
         </div>
     );
 }
