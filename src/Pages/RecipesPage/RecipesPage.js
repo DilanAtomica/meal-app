@@ -13,7 +13,7 @@ function RecipesPage(props) {
         const fetchRecipes = async() => {
             try {
                 const API = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + apiUrl
-                    + "&apiKey=19cbc6a6b21d4037815a9a3a15f7d294"
+                    + "&number=20&apiKey=19cbc6a6b21d4037815a9a3a15f7d294"
                 const response = await axios.get(API);
                 const results = response.data;
                 setRecipes(results);
@@ -26,8 +26,24 @@ function RecipesPage(props) {
         console.log(apiUrl);
     }, []);
 
+ /*   useEffect(() => {
+        const test = async() => {
+            try {
+                const API = "https://api.spoonacular.com/recipes/640803/information?&apiKey=19cbc6a6b21d4037815a9a3a15f7d294"
+                const response = await axios.get(API);
+                console.log(response);
+            } catch {
+                console.log("Error")
+            }
+        }
+        test();
+    }, []);
+
+*/
+
     return (
         <div className="recipesPage">
+            <h1>Matching Recipes</h1>
             <div className="recipesContainer">
 
                 {recipes?.map(recipe => (
