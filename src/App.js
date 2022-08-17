@@ -4,6 +4,7 @@ import FrontPage from "./Pages/FrontPage/FrontPage";
 import IngredientsPage from "./Pages/IngredientsPage/IngredientsPage";
 import NutrientsPage from "./Pages/NutrientsPage/NutrientsPage";
 import RecipesPage from "./Pages/RecipesPage/RecipesPage";
+import RecipeInfoPage from "./Pages/RecipeInfoPage/RecipeInfoPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/ingredients" element={<> <IngredientsPage /> </>} />
           <Route path="/nutrients" element={<> <NutrientsPage /> </>} />
           <Route path="/recipes/:apiUrl" element={<> <RecipesPage /> </>} />
+          <Route path="/recipe/:recipeID" element={<> <RecipeInfoPage /> </>} />
         </Routes>
       </BrowserRouter>
     </div>

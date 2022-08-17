@@ -7,12 +7,12 @@
 }
 
 .recipesPage > h1 {
+    color: white;
     background-color: #D8456B;
     width: 80%;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     text-align: center;
-    color: white;
     padding: 1rem 0;
 }
 
