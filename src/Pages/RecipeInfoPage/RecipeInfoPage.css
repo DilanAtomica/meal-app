@@ -1,6 +1,6 @@
 .recipeInfoPage {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -71,4 +71,34 @@
     text-align: center;
     font-size: 0.7rem;
     color: rgba(79, 80, 90, 0.6);
+}
+
+.neededEquipmentContainer {
+    width: 35rem;
+    min-height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.neededEquipment {
+    width: max-content;
+    height: max-content;
+    margin: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.neededEquipment-image {
+    object-fit: contain;
+    width: auto;
+    height: 4rem;
+}
+
+.neededEquipment-name {
+    text-align: center;
+    font-size: 0.8rem;
 }

@@ -9,6 +9,7 @@ function RecipeInfoPage(props) {
     let { recipeID } = useParams();
 
     const [recipeInfo, setRecipeInfo] = useState([]);
+    const [recipeEquipment, setRecipeEquipment] = useState([]);
     const[servingSize, setServingSize] = useState(1);
 
     useEffect(() => {
@@ -18,6 +19,7 @@ function RecipeInfoPage(props) {
                     "/information?includeNutrition=true&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
                 const response = await axios.get(API);
                 setRecipeInfo(response.data);
+                fetchEquipments(response.data.id);
 
             } catch {
                 console.log("Error")
@@ -26,6 +28,15 @@ function RecipeInfoPage(props) {
         fetchRecipeInfo();
 
     }, []);
+
+    const fetchEquipments = async(recipeID) => {
+        const API = "https://api.spoonacular.com/recipes/" + recipeID +
+            "/equipmentWidget.json?apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
+        const response = await axios.get(API);
+        console.log(response);
+        setRecipeEquipment(response.data);
+
+    }
 
     /*<p className="recipeSummary" dangerouslySetInnerHTML={{__html: recipeInfo?.summary}} />*/
 
@@ -47,6 +58,16 @@ function RecipeInfoPage(props) {
                         <span className="neededIngredient-amount">
                             {ingredient?.measures?.metric?.amount * servingSize} {ingredient?.measures?.metric?.unitShort}
                         </span>
+                    </div>
+                ))}
+            </div>
+
+            <h2>Equipment</h2>
+            <div className="neededEquipmentContainer">
+                {recipeEquipment?.equipment?.map(equipment => (
+                    <div key={equipment?.name}  className="neededEquipment">
+                        <img className="neededEquipment-image" src={"https://spoonacular.com/cdn/equipment_100x100/" + equipment?.image} />
+                        <span className="neededEquipment-name">{equipment?.name}</span>
                     </div>
                 ))}
             </div>
