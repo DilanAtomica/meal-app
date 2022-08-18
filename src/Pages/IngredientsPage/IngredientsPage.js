@@ -47,16 +47,20 @@ function IngredientsPage(props) {
     const addIngredient = (e) => {
         setSearchInput("");
         setSearchedIngredients([]);
-        const ingredientName = e.target.getAttribute("data-name");
-        const ingredientImage = e.target.getAttribute("data-image");
-        if(ingredientName === null) return
+        const ingredientName = e.currentTarget.getAttribute("data-name");
+        const ingredientImage = e.currentTarget.getAttribute("data-image");
+        if(ingredientName === null) {
+            console.log(ingredientName);
+            console.log(e.target.getAttribute("data-name"));
+            return
+        }
 
         setAddedIngredients([...addedIngredients,
              {
                 name: ingredientName,
                 image: ingredientImage
             }
-        ])
+        ]);
     };
 
     const removeIngredient = (e) => {
