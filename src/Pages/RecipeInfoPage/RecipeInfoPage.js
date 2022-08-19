@@ -58,8 +58,6 @@ function RecipeInfoPage(props) {
 
     return (
         <div className="recipeInfoPage">
-            <div className="recipeInfoPageContainer">
-
             <img className="recipeImage" src={recipeInfo?.image} />
 
                 <div className="recipeTagsContainer">
@@ -111,7 +109,6 @@ function RecipeInfoPage(props) {
                         <p>{instruction?.step}</p>
                     </div>
                 ))}
-            </div>
             </div>
         </div>
     );
