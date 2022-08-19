@@ -2,25 +2,53 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    outline: 3px solid red;
+    justify-content: center;
+    background-color: #F2F2F2;
 }
 
-.recipeTitle {
-
+.recipeInfoPageContainer {
+    width: 80%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
 }
 
 .recipeImage {
-
+    object-fit: cover;
+    width: 100%;
+    height: 40rem;
+    margin-top: 5.5rem;
 }
 
-.recipeInfoPage > h2 {
+.recipeTagsContainer {
+    display: flex;
     margin-top: 2rem;
+}
+
+.recipeTag {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #205B00;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: 0.5rem;
+    text-decoration: line-through;
+}
+
+.recipeName {
+    font-size: 1.5rem;
+    color: #205b00;
+    margin-top: 3rem;
 }
 
 .recipeInfoPage form {
     width: 35rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .recipeInfoPage form > label {
@@ -37,40 +65,51 @@
     cursor: pointer;
 }
 
+.neededIngredientsTitle {
+    margin-top: 5rem;
+}
+
 .neededIngredientsContainer {
-    width: 35rem;
+    width: max-content;
     min-height: max-content;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 1rem;
+
 }
 
 .neededIngredient {
-    width: max-content;
+    width: 100%;
     height: max-content;
-    margin: 0.5rem;
-    border-radius: 10px;
+    margin: 0.5rem 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    border-bottom: 1px solid black;
 }
 
 .neededIngredient > img {
     object-fit: contain;
     width: auto;
-    height: 4rem;
+    height: 2rem;
 }
 
 .neededIngredient-name {
-    text-align: center;
-    font-size: 0.8rem;
+    font-size: 14px;
+    font-weight: 700;
+    color: #205b00;
+    width: 12.5rem;
 }
 
 .neededIngredient-amount {
-    text-align: center;
-    font-size: 0.7rem;
-    color: rgba(79, 80, 90, 0.6);
+    text-align: start;
+    font-size: 14px;
+    font-weight: 700;
+    color: #205b00;
+    width: 7.5rem;
+}
+
+.neededEquipmentTitle {
+    margin-top: 5rem;
 }
 
 .neededEquipmentContainer {

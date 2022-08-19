@@ -10,8 +10,9 @@ function RecipeInfoPage(props) {
 
     const [recipeInfo, setRecipeInfo] = useState([]);
     const [recipeEquipment, setRecipeEquipment] = useState([]);
-    const[servingSize, setServingSize] = useState(1);
+    const [servingSize, setServingSize] = useState(1);
     const [instructions, setInstructions] = useState([]);
+    const [nutrition, setNutrition] = useState([]);
 
     useEffect(() => {
         const fetchRecipeInfo = async() => {
@@ -21,6 +22,7 @@ function RecipeInfoPage(props) {
                 const response = await axios.get(API);
                 setRecipeInfo(response.data);
                 setInstructions(response.data.analyzedInstructions[0].steps);
+                setNutrition(response.data.nutrition.nutrients);
                 fetchEquipments(response.data.id);
 
             } catch {
@@ -43,10 +45,20 @@ function RecipeInfoPage(props) {
 
     return (
         <div className="recipeInfoPage">
-            <h1 className="recipeTitle">{recipeInfo?.title}</h1>
+            <div className="recipeInfoPageContainer">
+
             <img className="recipeImage" src={recipeInfo?.image} />
 
-            <h2>Ingredients</h2>
+                <div className="recipeTagsContainer">
+                    <div style={{textDecoration: !recipeInfo?.glutenFree && "none"}} className="recipeTag">Gluten</div>
+                    <div style={{textDecoration: recipeInfo?.vegan && "none"}} className="recipeTag">Vegan</div>
+                    <div style={{textDecoration: recipeInfo?.vegetarian && "none"}} className="recipeTag">Vegetarian</div>
+                    <div style={{textDecoration: !recipeInfo?.dairyFree && "none"}} className="recipeTag">Dairy</div>
+                </div>
+
+                <h1 className="recipeName">{recipeInfo?.title}</h1>
+
+            <h2 className="neededIngredientsTitle">Ingredients</h2>
             <form>
             <label htmlFor="servingSizeCounter">Servings</label>
             <input value={servingSize} onChange={(e) => setServingSize(e.target.value)} id="servingSizeCounter" type="number" min={1} max={5} />
@@ -54,16 +66,16 @@ function RecipeInfoPage(props) {
             <div className="neededIngredientsContainer">
                 {recipeInfo?.extendedIngredients?.map(ingredient => (
                     <div key={ingredient?.id} className="neededIngredient">
-                        <img className="neededIngredient-image" src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient?.image} />
-                        <span className="neededIngredient-name">{ingredient?.name}</span>
                         <span className="neededIngredient-amount">
                             {ingredient?.measures?.metric?.amount * servingSize} {ingredient?.measures?.metric?.unitShort}
                         </span>
+                        <span className="neededIngredient-name">{ingredient?.name}</span>
+                        <img className="neededIngredient-image" src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient?.image} />
                     </div>
                 ))}
             </div>
 
-            <h2>Equipment</h2>
+            <h2 className="neededEquipmentTitle">Equipment</h2>
             <div className="neededEquipmentContainer">
                 {recipeEquipment?.equipment?.map(equipment => (
                     <div key={equipment?.name}  className="neededEquipment">
@@ -81,6 +93,7 @@ function RecipeInfoPage(props) {
                         <p>{instruction?.step}</p>
                     </div>
                 ))}
+            </div>
             </div>
         </div>
     );
