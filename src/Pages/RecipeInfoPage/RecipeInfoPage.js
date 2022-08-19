@@ -11,6 +11,7 @@ function RecipeInfoPage(props) {
     const [recipeInfo, setRecipeInfo] = useState([]);
     const [recipeEquipment, setRecipeEquipment] = useState([]);
     const[servingSize, setServingSize] = useState(1);
+    const [instructions, setInstructions] = useState([]);
 
     useEffect(() => {
         const fetchRecipeInfo = async() => {
@@ -19,6 +20,7 @@ function RecipeInfoPage(props) {
                     "/information?includeNutrition=true&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
                 const response = await axios.get(API);
                 setRecipeInfo(response.data);
+                setInstructions(response.data.analyzedInstructions[0].steps);
                 fetchEquipments(response.data.id);
 
             } catch {
@@ -33,7 +35,6 @@ function RecipeInfoPage(props) {
         const API = "https://api.spoonacular.com/recipes/" + recipeID +
             "/equipmentWidget.json?apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
         const response = await axios.get(API);
-        console.log(response);
         setRecipeEquipment(response.data);
 
     }
@@ -72,6 +73,15 @@ function RecipeInfoPage(props) {
                 ))}
             </div>
 
+            <h2>Instructions</h2>
+            <div className="instructionsContainer">
+                {instructions.map(instruction => (
+                    <div key={instruction?.number} className="instruction">
+                        <div className="instructionOrder">{instruction?.number}</div>
+                        <p>{instruction?.step}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }

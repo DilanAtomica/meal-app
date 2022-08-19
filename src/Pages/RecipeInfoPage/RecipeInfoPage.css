@@ -102,3 +102,34 @@
     text-align: center;
     font-size: 0.8rem;
 }
+
+.instructionsContainer {
+    width: 40rem;
+}
+
+.instructionsContainer > .instruction {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.instruction > .instructionOrder {
+    min-width: 2rem;
+    min-height: 2rem;
+    max-height: 2rem;
+    max-width: 2rem;
+    border-radius: 50px;
+    background-color: #D8456B;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.instruction > p {
+    color: #666666;
+    margin-top: 0.5rem;
+    line-height: 22px;
+}
+
