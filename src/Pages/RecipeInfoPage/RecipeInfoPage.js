@@ -3,6 +3,8 @@ import "./RecipeInfoPage.css";
 import {useParams} from "react-router-dom";
 import {useEffect} from "react";
 import axios from "axios";
+import {AiOutlineMinus} from "react-icons/ai"
+import {AiOutlinePlus} from "react-icons/ai"
 
 function RecipeInfoPage(props) {
 
@@ -41,6 +43,17 @@ function RecipeInfoPage(props) {
 
     }
 
+    const changeServingSize = (e) => {
+        console.log(e.currentTarget.classList[0]);
+        if(e.currentTarget.classList[0] === "servingSize-increase" && servingSize !== 5) {
+            setServingSize((prevState => prevState + 1));
+        }
+
+        if(e.currentTarget.classList[0] === "servingSize-reduce" && servingSize !== 1) {
+            setServingSize((prevState => prevState - 1));
+        }
+    }
+
     /*<p className="recipeSummary" dangerouslySetInnerHTML={{__html: recipeInfo?.summary}} />*/
 
     return (
@@ -58,11 +71,16 @@ function RecipeInfoPage(props) {
 
                 <h1 className="recipeName">{recipeInfo?.title}</h1>
 
+                <span className="recipePrepTime">Easy <span>•</span> 30 min</span>
+
             <h2 className="neededIngredientsTitle">Ingredients</h2>
-            <form>
-            <label htmlFor="servingSizeCounter">Servings</label>
-            <input value={servingSize} onChange={(e) => setServingSize(e.target.value)} id="servingSizeCounter" type="number" min={1} max={5} />
-            </form>
+
+                <h3 className="servingSizeTitle">Servings</h3>
+                <div className="servingSizeCounter">
+                    <button type="button" onClick={changeServingSize} className="servingSize-reduce"><AiOutlineMinus /></button>
+                    <span>{servingSize}</span>
+                    <button type="button" onClick={changeServingSize} className="servingSize-increase"><AiOutlinePlus /></button>
+                </div>
             <div className="neededIngredientsContainer">
                 {recipeInfo?.extendedIngredients?.map(ingredient => (
                     <div key={ingredient?.id} className="neededIngredient">
