@@ -10,6 +10,10 @@ ul {
   list-style-type: none;
 }
 
+input {
+  font-family:inherit;
+}
+
 body {
   background-color: #F2F2F2;
 }
