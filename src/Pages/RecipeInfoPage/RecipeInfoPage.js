@@ -5,6 +5,7 @@ import {useEffect} from "react";
 import axios from "axios";
 import {AiOutlineMinus} from "react-icons/ai"
 import {AiOutlinePlus} from "react-icons/ai"
+import noImage from "../../images/noImage.png";
 
 function RecipeInfoPage(props) {
 
@@ -58,7 +59,7 @@ function RecipeInfoPage(props) {
 
     return (
         <div className="recipeInfoPage">
-            <img className="recipeImage" src={recipeInfo?.image} />
+            <img className="recipeImage" src={recipeInfo?.image || noImage} />
 
                 <div className="recipeTagsContainer">
                     <div style={{textDecoration: !recipeInfo?.glutenFree && "none"}} className="recipeTag">Gluten</div>

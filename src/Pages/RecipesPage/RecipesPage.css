@@ -4,7 +4,6 @@
     margin: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: white;
 }
 
@@ -18,6 +17,7 @@
 .recipe {
     display: flex;
     width: 30rem;
+    height: max-content;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     margin: 0.5rem;
@@ -41,7 +41,7 @@
 
 .recipeInfo {
     width: 30rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem;
 }
 
 .recipeInfo > h2 {
@@ -51,6 +51,6 @@
 }
 .recipeInfo > p {
     font-size: 0.8rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     color: #205B00;
 }

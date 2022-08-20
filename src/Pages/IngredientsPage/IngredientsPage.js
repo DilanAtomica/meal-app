@@ -88,8 +88,9 @@ function IngredientsPage(props) {
     return (
         <div className="ingredientsPage">
             <div className="ingredientsContainer">
+                <h1>Add your ingredients</h1>
                 <div className="searchContainer">
-                    <input value={searchInput} onChange={getIngredient} type="text" placeholder="Add ingredients..." />
+                    <input value={searchInput} onChange={getIngredient} type="text" placeholder="Add your ingredients..." />
                     <div className="autoCompletedIngredients">
                         {searchedIngredients?.map(ingredient => (
                             <button data-name={ingredient.name}

@@ -1,9 +1,11 @@
 .ingredientsPage {
     height: 100vh;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 .ingredientsContainer {
@@ -12,6 +14,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.ingredientsContainer > h1 {
+    color: #205B00;
+    margin-bottom: 1rem;
 }
 
 .searchContainer {
@@ -24,21 +31,26 @@
 }
 
 .searchContainer > input {
-    height: max-content;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid black;
-    width: 50%;
+    width: 100%;
+    padding: 1rem 0;
+    padding-left: 10px;
+    background-color: #f2f2f2;
+    border: 2px solid #ccd2de;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.searchContainer > input::placeholder {
+    color: #205B00;
 }
 
 .autoCompletedIngredients {
     position: absolute;
-    width: calc(50% + 2rem);
+    width: calc(100% + 1rem);
     background-color: white;
     z-index: 5;
     height: max-content;
-    top: 2rem;
+    top: 3rem;
     border-radius: 5px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
@@ -80,7 +92,7 @@
     flex-wrap: wrap;
     margin-top: 1rem;
     font-size: 0.8rem;
-    outline: solid red;
+    color: #205B00;
 }
 
 .ingredient {
@@ -116,15 +128,20 @@
 }
 
 .findRecipeButton {
-    width: 100%;
-    padding: 0.5rem;
+    width: 50%;
+    padding: 0.75rem 0;
     border-radius: 5px;
     border: none;
-    background-color: lightgray;
+    background-color: #205B00;
+    color: white;
     cursor: pointer;
     transition: 0.2s;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 .findRecipeButton:hover {
-    background-color: gray;
+    background-color: white;
+    color: black;
 }
