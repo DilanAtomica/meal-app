@@ -11,6 +11,7 @@
     margin: auto;
     display: flex;
     align-items: center;
+    background-color: white;
 }
 
 .innerNavBar > img {
@@ -51,6 +52,7 @@
     background: none;
     border: none;
     color: #205B00;
+    transition: 0.2s;
 }
 
 .innerNavBar > button {
@@ -60,6 +62,7 @@
     border: none;
     padding: 0 2rem 0 1.5rem;
     color: #205B00;
+    transition: 0.2s;
 }
 
 .innerNavBar-searchBar > button:hover, .innerNavBar > button:hover {

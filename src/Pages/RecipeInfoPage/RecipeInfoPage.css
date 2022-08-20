@@ -48,6 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .recipePrepTime > span {
@@ -103,7 +104,7 @@
 }
 
 .neededIngredientsContainer {
-    width: max-content;
+    width: 25rem;
     min-height: max-content;
     display: flex;
     flex-direction: column;
@@ -120,6 +121,12 @@
     border-bottom: 1px solid black;
 }
 
+.neededIngredient:first-child {
+    border-top: 1px solid black;
+    padding-top: 0.75rem;
+
+}
+
 .neededIngredient > img {
     object-fit: contain;
     width: auto;
@@ -128,7 +135,7 @@
 
 .neededIngredient-name {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     color: #205b00;
     width: 12.5rem;
 }
@@ -141,38 +148,40 @@
     width: 7.5rem;
 }
 
-.neededEquipmentTitle {
-    margin-top: 5rem;
-}
-
 .neededEquipmentContainer {
-    width: 35rem;
+    width: 25rem;
     min-height: max-content;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+    flex-direction: column;
 }
 
 .neededEquipment {
-    width: max-content;
+    width: 100%;
     height: max-content;
-    margin: 0.5rem;
-    border-radius: 10px;
+    margin: 0.5rem 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid black;
 }
 
 .neededEquipment-image {
     object-fit: contain;
     width: auto;
-    height: 4rem;
+    height: 2rem;
 }
 
 .neededEquipment-name {
-    text-align: center;
-    font-size: 0.8rem;
+    font-size: 14px;
+    font-weight: 400;
+    color: #205b00;
+    width: 12.5rem;
+    padding-left: 7.5rem;
+}
+
+.instructionsTitle {
+    margin-top: 3rem;
+    color: #205b00;
 }
 
 .instructionsContainer {
@@ -190,7 +199,7 @@
     max-height: 2rem;
     max-width: 2rem;
     border-radius: 50px;
-    background-color: #D8456B;
+    background-color: #205b00;
     color: white;
     font-weight: bold;
     display: flex;

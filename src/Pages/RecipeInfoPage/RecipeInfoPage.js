@@ -71,7 +71,7 @@ function RecipeInfoPage(props) {
 
                 <span className="recipePrepTime">Easy <span>•</span> 30 min</span>
 
-            <h2 className="neededIngredientsTitle">Ingredients</h2>
+            <h2 className="neededIngredientsTitle">Ingredients/Equipment</h2>
 
                 <h3 className="servingSizeTitle">Servings</h3>
                 <div className="servingSizeCounter">
@@ -90,18 +90,16 @@ function RecipeInfoPage(props) {
                     </div>
                 ))}
             </div>
-
-            <h2 className="neededEquipmentTitle">Equipment</h2>
             <div className="neededEquipmentContainer">
                 {recipeEquipment?.equipment?.map(equipment => (
                     <div key={equipment?.name}  className="neededEquipment">
-                        <img className="neededEquipment-image" src={"https://spoonacular.com/cdn/equipment_100x100/" + equipment?.image} />
                         <span className="neededEquipment-name">{equipment?.name}</span>
+                        <img className="neededEquipment-image" src={"https://spoonacular.com/cdn/equipment_100x100/" + equipment?.image} />
                     </div>
                 ))}
             </div>
 
-            <h2>Instructions</h2>
+            <h2 className="instructionsTitle">Instructions</h2>
             <div className="instructionsContainer">
                 {instructions.map(instruction => (
                     <div key={instruction?.number} className="instruction">
