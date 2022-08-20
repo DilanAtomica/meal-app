@@ -30,7 +30,6 @@ function RecipesPage(props) {
 
     return (
         <div className="recipesPage">
-                <h1>Matching Recipes</h1>
             <div className="recipesContainer">
 
                 {recipes?.map(recipe => (

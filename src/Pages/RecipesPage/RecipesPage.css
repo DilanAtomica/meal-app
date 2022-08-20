@@ -1,25 +1,18 @@
 .recipesPage {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.recipesPage > h1 {
-    color: white;
-    background-color: #D8456B;
+    min-height: 100vh;
     width: 80%;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    text-align: center;
-    padding: 1rem 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }
 
 .recipesContainer {
-    width: 70%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-top: 5.5rem;
 }
 
 .recipe {
@@ -54,9 +47,10 @@
 .recipeInfo > h2 {
     font-size: 1rem;
     font-weight: 400;
+    color: #205B00;
 }
 .recipeInfo > p {
     font-size: 0.8rem;
     padding-top: 1rem;
-    color: rgba(79, 80, 90, 0.6);
+    color: #205B00;
 }
