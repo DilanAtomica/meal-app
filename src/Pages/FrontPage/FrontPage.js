@@ -19,9 +19,9 @@ function FrontPage(props) {
           <div className="frontPage-startContainer">
               <h1>Find recipe by...</h1>
               <div className="frontPage-startButtons">
-                  <button onClick={handleOnClick} type="button">Ingredients</button>
-                  <h2>Or</h2>
-                  <button onClick={handleOnClick} type="button">Nutrients</button>
+                  <button className="ingredientsButton" onClick={handleOnClick} type="button">Ingredients</button>
+                  <span>Or</span>
+                  <button className="nutrientsButton" onClick={handleOnClick} type="button">Nutrients</button>
               </div>
           </div>
         </div>

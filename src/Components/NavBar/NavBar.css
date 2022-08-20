@@ -20,6 +20,7 @@
     width: auto;
     height: 2rem;
     margin: 0 3rem;
+    cursor: pointer;
 }
 
 .innerNavBar-searchBar {
