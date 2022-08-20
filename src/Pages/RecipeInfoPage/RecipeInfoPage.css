@@ -186,11 +186,13 @@
 
 .instructionsContainer {
     width: 40rem;
+    margin-bottom: 5rem;
 }
 
 .instructionsContainer > .instruction {
     display: flex;
-    margin-top: 1rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid black;
 }
 
 .instruction > .instructionOrder {
@@ -209,8 +211,10 @@
 }
 
 .instruction > p {
-    color: #666666;
-    margin-top: 0.5rem;
-    line-height: 22px;
+    margin-top: 1rem;
+    margin-left: 2.5rem;
+    line-height: 31px;
+    font-size: 18px;
+    color: #205B00;
 }
 
