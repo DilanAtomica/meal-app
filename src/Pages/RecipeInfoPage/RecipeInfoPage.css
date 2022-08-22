@@ -121,12 +121,6 @@
     border-bottom: 1px solid black;
 }
 
-.neededIngredient:first-child {
-    border-top: 1px solid black;
-    padding-top: 0.75rem;
-
-}
-
 .neededIngredient > img {
     object-fit: contain;
     width: auto;
