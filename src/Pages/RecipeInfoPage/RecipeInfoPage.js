@@ -84,7 +84,7 @@ function RecipeInfoPage(props) {
                 {recipeInfo?.extendedIngredients?.map(ingredient => (
                     <div key={ingredient?.id} className="neededIngredient">
                         <span className="neededIngredient-amount">
-                            {ingredient?.measures?.metric?.amount * servingSize} {ingredient?.measures?.metric?.unitShort}
+                            {Math.ceil(ingredient?.measures?.metric?.amount * servingSize)} {ingredient?.measures?.metric?.unitShort}
                         </span>
                         <span className="neededIngredient-name">{ingredient?.name}</span>
                         <img className="neededIngredient-image" src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient?.image} />
