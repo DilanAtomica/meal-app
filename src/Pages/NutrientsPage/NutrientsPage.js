@@ -13,8 +13,8 @@ function NutrientsPage(props) {
         maxProtein: 0,
         minCarbs: 0,
         maxCarbs: 0,
-        minFats: 0,
-        maxFats: 0,
+        minFat: 0,
+        maxFat: 0,
     });
 
     const handleOnInput = (e) => {
@@ -32,8 +32,8 @@ function NutrientsPage(props) {
         if(nutrientsValues.maxProtein !== 0) apiUrl = apiUrl + "&maxProtein=" + nutrientsValues.maxProtein;
         if(nutrientsValues.minCarbs !== 0) apiUrl = apiUrl + "&minCarbs=" + nutrientsValues.minCarbs;
         if(nutrientsValues.maxCarbs !== 0) apiUrl = apiUrl + "&maxCarbs=" + nutrientsValues.maxCarbs;
-        if(nutrientsValues.minFats !== 0) apiUrl = apiUrl + "&minFats=" + nutrientsValues.minFats;
-        if(nutrientsValues.maxFats !== 0) apiUrl = apiUrl + "&maxFats=" + nutrientsValues.maxFats;
+        if(nutrientsValues.minFat !== 0) apiUrl = apiUrl + "&minFat=" + nutrientsValues.minFat;
+        if(nutrientsValues.maxFat !== 0) apiUrl = apiUrl + "&maxFat=" + nutrientsValues.maxFat;
 
         navigate("/recipes/" + apiUrl);
     }
@@ -47,7 +47,7 @@ function NutrientsPage(props) {
                         <label htmlFor="minCalories">Min</label>
                         <input onChange={(e) =>
                             setNutrientsValue({...nutrientsValues, minCalories: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minCalories" name="minCalories" />
+                               onInput={handleOnInput} type="number" id="minCalories" name="minCalories" max="1200" />
                         <label htmlFor="maxCalories">Max</label>
                         <input onChange={(e) =>
                             setNutrientsValue({...nutrientsValues, maxCalories: e.currentTarget.value})}
@@ -61,11 +61,11 @@ function NutrientsPage(props) {
                         <label htmlFor="minProtein">Min</label>
                         <input onChange={(e) =>
                             setNutrientsValue({...nutrientsValues, minProtein: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minProtein" name="minProtein" />
+                               onInput={handleOnInput} type="number" id="minProtein" name="minProtein" max="105" />
                         <label htmlFor="maxProtein">Max</label>
                         <input onChange={(e) =>
                             setNutrientsValue({...nutrientsValues, maxProtein: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minProtein" name="maxProtein" />
+                               onInput={handleOnInput} type="number" id="maxProtein" name="maxProtein" />
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@ function NutrientsPage(props) {
                         <label htmlFor="minCarbs">Min</label>
                         <input onChange={(e) =>
                             setNutrientsValue({...nutrientsValues, minCarbs: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minCarbs" name="minCarbs" />
+                               onInput={handleOnInput} type="number" id="minCarbs" name="minCarbs" max="119" />
                         <label htmlFor="maxCarbs">Max</label>
                         <input onChange={(e) =>
                             setNutrientsValue({...nutrientsValues, maxCarbs: e.currentTarget.value})}
@@ -88,12 +88,12 @@ function NutrientsPage(props) {
                     <div className="nutrientForm-inputs">
                         <label htmlFor="minFats">Min</label>
                         <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, minFats: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minFats" name="minFats" />
+                            setNutrientsValue({...nutrientsValues, minFat: e.currentTarget.value})}
+                               onInput={handleOnInput} type="number" id="minFat" name="minFat" max="100" />
                         <label htmlFor="maxFats">Max</label>
                         <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, maxFats: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="maxFats" name="maxFats" />
+                            setNutrientsValue({...nutrientsValues, maxFat: e.currentTarget.value})}
+                               onInput={handleOnInput} type="number" id="maxFat" name="maxFat" />
                     </div>
                 </div>
                 <button className="findRecipeButton" type="submit">Find Recipe</button>

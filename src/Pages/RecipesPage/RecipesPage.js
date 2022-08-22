@@ -40,7 +40,7 @@ function RecipesPage(props) {
         }
 
         if(apiUrl.includes("Protein") || apiUrl.includes("Carbs") || apiUrl.includes("Calories") ||
-            apiUrl.includes("Fats")) {
+            apiUrl.includes("Fat")) {
             fetchRecipesByNutrients();
         } else {
             fetchRecipesByIngredients();
