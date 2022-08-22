@@ -2,6 +2,12 @@ import React from 'react';
 import "./NutrientsPage.css";
 
 function NutrientsPage(props) {
+
+    const handleOnInput = (e) => {
+        if(e.target.value.length > 4) e.target.value = e.target.value.slice(0, -1);
+    }
+
+
     return (
         <div className="nutrientsPage">
             <form>
@@ -10,7 +16,7 @@ function NutrientsPage(props) {
                     <h2>Calories</h2>
                     <div className="nutrientForm-inputs">
                         <label htmlFor="minCalories">Min</label>
-                        <input type="number" id="minCalories" name="minCalories" />
+                        <input onInput={handleOnInput} type="number" id="minCalories" name="minCalories" />
                         <label htmlFor="maxCalories">Max</label>
                         <input type="number" id="maxCalories" name="maxCalories" />
                     </div>
