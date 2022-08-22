@@ -26,6 +26,7 @@ function RecipeInfoPage(props) {
                 setRecipeInfo(response.data);
                 setInstructions(response.data.analyzedInstructions[0].steps);
                 setNutrition(response.data.nutrition.nutrients);
+                setServingSize(response.data.servings);
                 fetchEquipments(response.data.id);
 
             } catch {
@@ -70,7 +71,7 @@ function RecipeInfoPage(props) {
 
                 <h1 className="recipeName">{recipeInfo?.title}</h1>
 
-                <span className="recipePrepTime">Easy <span>•</span> 30 min</span>
+                <span className="recipePrepTime">Easy <span>•</span> {recipeInfo?.readyInMinutes} min</span>
 
             <h2 className="neededIngredientsTitle">Ingredients/Equipment</h2>
 
