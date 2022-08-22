@@ -1,0 +1,53 @@
+.nutrientsPage {
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+}
+
+.nutrientsPage > form {
+    width: 50%;
+}
+
+.nutrientsPage input[type=number]::-webkit-inner-spin-button,
+.nutrientsPage input[type=number]::-webkit-outer-spin-button {
+    visibility: hidden;
+}
+
+.nutrientForm > .nutrientForm-inputs > input {
+    width: 3rem;
+    padding: 0.5rem 0;
+    padding-left: 10px;
+    background-color: #f2f2f2;
+    border: 2px solid #ccd2de;
+    border-radius: 6px;
+    font-size: 14px;
+    margin: 0 1rem;
+}
+
+.nutrientForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 1rem 0;
+}
+
+.findRecipeButton {
+    width: 50%;
+    padding: 0.75rem 0;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background-color: #205B00;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    font-size: 1rem;
+    border: 2px solid #205B00;
+}
