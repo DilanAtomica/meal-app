@@ -10,7 +10,7 @@
 }
 
 .nutrientsPage > form {
-    width: 50%;
+    width: 35rem;
 }
 
 .nutrientsPage input[type=number]::-webkit-inner-spin-button,
