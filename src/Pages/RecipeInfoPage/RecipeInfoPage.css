@@ -131,6 +131,7 @@
     object-fit: contain;
     width: auto;
     height: 2rem;
+    min-width: 5rem;
 }
 
 .neededIngredient-name {
@@ -169,6 +170,7 @@
     object-fit: contain;
     width: auto;
     height: 2rem;
+    min-width: 5rem;
 }
 
 .neededEquipment-name {
