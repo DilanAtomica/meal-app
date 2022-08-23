@@ -1,0 +1,39 @@
+.recipeDescriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipeName {
+    font-size: 1.5rem;
+    color: #205b00;
+    margin-top: 3rem;
+}
+
+.recipeDescription {
+    border-top: 2px solid #E5E9EF;
+    border-bottom: 2px solid #E5E9EF;
+    width: 35rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #205B00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.recipeDescription:last-child {
+    margin-top: 0;
+    border-top: none;
+}
+
+.recipeDescription > span {
+    color: #B2BCCD;
+    font-size: 2rem;
+    margin: 0 0.35rem;
+}
+
+

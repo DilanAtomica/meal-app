@@ -1,0 +1,15 @@
+.recipeTagsContainer {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.recipeTag {
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    background-color: #205B00;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: 0.5rem;
+    text-decoration: line-through;
+}

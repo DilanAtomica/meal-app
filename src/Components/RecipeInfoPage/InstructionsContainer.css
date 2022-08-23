@@ -1,0 +1,42 @@
+.instructionsTitle {
+    margin-top: 3rem;
+    color: #205b00;
+}
+
+.instructionsContainer {
+    width: 40rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions > .instruction {
+    display: flex;
+    padding: 2rem 0;
+    border-bottom: 1px solid black;
+}
+
+.instruction > .instructionOrder {
+    min-width: 2rem;
+    min-height: 2rem;
+    max-height: 2rem;
+    max-width: 2rem;
+    border-radius: 50px;
+    background-color: #205b00;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.instruction > p {
+    margin-top: 1rem;
+    margin-left: 2.5rem;
+    line-height: 31px;
+    font-size: 18px;
+    color: #205B00;
+}

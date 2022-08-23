@@ -1,0 +1,34 @@
+
+.servingSizeCounter {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.servingSize-reduce, .servingSize-increase {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+}
+
+.servingSize-reduce:hover, .servingSize-increase:hover {
+    background-color: #205B00;
+    color: white;
+}
+
+.servingSizeCounter > span {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #205B00;;
+}

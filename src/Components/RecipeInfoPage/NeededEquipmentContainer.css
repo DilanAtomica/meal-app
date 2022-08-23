@@ -1,0 +1,31 @@
+.neededEquipmentContainer {
+    width: 25rem;
+    min-height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.neededEquipment {
+    width: 100%;
+    height: max-content;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.neededEquipment-image {
+    object-fit: contain;
+    width: auto;
+    height: 2rem;
+    min-width: 5rem;
+}
+
+.neededEquipment-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #205b00;
+    width: 12.5rem;
+    padding-left: 7.5rem;
+}

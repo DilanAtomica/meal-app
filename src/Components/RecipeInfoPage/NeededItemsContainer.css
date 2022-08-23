@@ -1,0 +1,19 @@
+.neededItemsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.servingSizeTitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    color: #205B00;
+}
+
+.neededIngredientsTitle {
+    margin-top: 5rem;
+    color: #205B00;
+}
+
