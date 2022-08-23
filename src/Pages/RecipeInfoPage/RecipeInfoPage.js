@@ -72,9 +72,9 @@ function RecipeInfoPage(props) {
                 <h1 className="recipeName">{recipeInfo?.title}</h1>
 
                 <span className="recipePrepTime">Easy <span>•</span> {recipeInfo?.readyInMinutes} min</span>
-                <span className="recipeNutrients">{Math.ceil(nutrition[0].amount)} Calories
-                    <span>•</span> {Math.ceil(nutrition[8].amount)}g Protein <span>•</span> {Math.ceil(nutrition[3].amount)}g Carbs
-                    <span>•</span> {Math.ceil(nutrition[1].amount)}g Fat</span>
+                <span className="recipeNutrients">{Math.ceil(nutrition[0]?.amount)} Calories
+                    <span>•</span> {Math.ceil(nutrition[8]?.amount)}g Protein <span>•</span> {Math.ceil(nutrition[3]?.amount)}g Carbs
+                    <span>•</span> {Math.ceil(nutrition[1]?.amount)}g Fat</span>
 
 
             <h2 className="neededIngredientsTitle">Ingredients/Equipment</h2>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import "./NutrientsPage.css";
 import {useNavigate} from "react-router-dom";
+import NutrientForm from "../../Components/NutrientsPage/NutrientForm";
 
 function NutrientsPage(props) {
 
@@ -17,7 +18,7 @@ function NutrientsPage(props) {
         maxFat: 0,
     });
 
-    const handleOnInput = (e) => {
+    const minimizeLength = (e) => {
         if(e.currentTarget.value.length > 4) e.currentTarget.value = e.currentTarget.value.slice(0, -1);
     }
 
@@ -38,64 +39,38 @@ function NutrientsPage(props) {
         navigate("/recipes/" + apiUrl);
     }
 
+    const setMinInputValue = (nutrient, nutrientValue, inputID) => {
+
+        if(nutrient === "Calories") setNutrientsValue({...nutrientsValues, minCalories: nutrientValue});
+        if(nutrient === "Protein") setNutrientsValue({...nutrientsValues, minProtein: nutrientValue});
+        if(nutrient === "Carbs") setNutrientsValue({...nutrientsValues, minCarbs: nutrientValue});
+        if(nutrient === "Fat") setNutrientsValue({...nutrientsValues, minFat: nutrientValue});
+    }
+
+    const setMaxInputValue = (nutrient, nutrientValue) => {
+        if(nutrient === "Calories") setNutrientsValue({...nutrientsValues, maxCalories: nutrientValue});
+        if(nutrient === "Protein") setNutrientsValue({...nutrientsValues, maxProtein: nutrientValue});
+        if(nutrient === "Carbs") setNutrientsValue({...nutrientsValues, maxCarbs: nutrientValue});
+        if(nutrient === "Fat") setNutrientsValue({...nutrientsValues, maxFat: nutrientValue});
+    }
+
+
     return (
         <div className="nutrientsPage">
             <form onSubmit={handleOnSubmit}>
-                <div className="nutrientForm">
-                    <h2>Calories</h2>
-                    <div className="nutrientForm-inputs">
-                        <label htmlFor="minCalories">Min</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, minCalories: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minCalories" name="minCalories" max="1200" />
-                        <label htmlFor="maxCalories">Max</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, maxCalories: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="maxCalories" name="maxCalories" />
-                    </div>
-                </div>
 
-                <div className="nutrientForm">
-                    <h2>Protein</h2>
-                    <div className="nutrientForm-inputs">
-                        <label htmlFor="minProtein">Min</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, minProtein: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minProtein" name="minProtein" max="105" />
-                        <label htmlFor="maxProtein">Max</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, maxProtein: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="maxProtein" name="maxProtein" />
-                    </div>
-                </div>
+                <NutrientForm nutrientName="Calories" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                              minimizeLength={minimizeLength} minInputID="minCalories" maxInputID="maxCalories" maxValue={1200}/>
 
-                <div className="nutrientForm">
-                    <h2>Carbs</h2>
-                    <div className="nutrientForm-inputs">
-                        <label htmlFor="minCarbs">Min</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, minCarbs: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minCarbs" name="minCarbs" max="119" />
-                        <label htmlFor="maxCarbs">Max</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, maxCarbs: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="maxCarbs" name="maxCarbs" />
-                    </div>
-                </div>
+                <NutrientForm nutrientName="Protein" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                              minimizeLength={minimizeLength} minInputID="minProtein" maxInputID="maxProtein" maxValue={105}/>
 
-                <div className="nutrientForm">
-                    <h2>Fats</h2>
-                    <div className="nutrientForm-inputs">
-                        <label htmlFor="minFats">Min</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, minFat: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="minFat" name="minFat" max="100" />
-                        <label htmlFor="maxFats">Max</label>
-                        <input onChange={(e) =>
-                            setNutrientsValue({...nutrientsValues, maxFat: e.currentTarget.value})}
-                               onInput={handleOnInput} type="number" id="maxFat" name="maxFat" />
-                    </div>
-                </div>
+                <NutrientForm nutrientName="Carbs" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                              minimizeLength={minimizeLength} minInputID="minCarbs" maxInputID="maxCarbs" maxValue={119}/>
+
+                <NutrientForm nutrientName="Fat" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                              minimizeLength={minimizeLength} minInputID="minFat" maxInputID="maxFat" maxValue={100}/>
+
                 <button className="findRecipeButton" type="submit">Find Recipe</button>
             </form>
         </div>
