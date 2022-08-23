@@ -1,0 +1,41 @@
+.addedIngredientsContainer {
+    width: 100%;
+    min-height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #205B00;
+}
+
+.ingredient {
+    width: max-content;
+    height: max-content;
+    margin: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredient > img {
+    object-fit: contain;
+    width: auto;
+    height: 4rem;
+}
+
+.ingredientTag {
+    text-align: center;
+}
+
+.ingredientTag > button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    height: max-content;
+    width: max-content;
+    border-radius: 50px;
+    color: #CA1929;
+}

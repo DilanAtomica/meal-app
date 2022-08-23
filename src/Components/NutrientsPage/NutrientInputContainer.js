@@ -1,7 +1,7 @@
 import React from 'react';
 import "./NutrientForm.css";
 
-function NutrientForm({nutrientName, setMinInputValue, setMaxInputValue, minimizeLength, minInputID, maxInputID, maxValue}) {
+function NutrientInputContainer({nutrientName, setMinInputValue, setMaxInputValue, minimizeLength, minInputID, maxInputID, maxValue}) {
 
     const handleOnChange = (e) => {
         if(e.currentTarget.id.includes("min")) {
@@ -16,9 +16,9 @@ function NutrientForm({nutrientName, setMinInputValue, setMaxInputValue, minimiz
     }
 
     return (
-        <div className="nutrientForm">
+        <div className="nutrientInputContainer">
             <h2>{nutrientName}</h2>
-            <div className="nutrientForm-inputs">
+            <div className="nutrientInputContainer-input">
                 <label htmlFor={minInputID}>Min</label>
                 <input onChange={handleOnChange}
                        onInput={handleOnInput} type="number" id={minInputID} name={minInputID} max={maxValue} />
@@ -30,4 +30,4 @@ function NutrientForm({nutrientName, setMinInputValue, setMaxInputValue, minimiz
     );
 }
 
-export default NutrientForm;
+export default NutrientInputContainer;

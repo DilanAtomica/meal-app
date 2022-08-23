@@ -7,7 +7,15 @@
     visibility: hidden;
 }
 
-.nutrientForm > .nutrientForm-inputs > input {
+.nutrientInputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 1rem 0;
+}
+
+.nutrientInputContainer > .nutrientInputContainer-input > input {
     width: 3rem;
     padding: 0.5rem 0;
     padding-left: 10px;
@@ -16,12 +24,4 @@
     border-radius: 6px;
     font-size: 14px;
     margin: 0 1rem;
-}
-
-.nutrientForm {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    padding: 1rem 0;
 }

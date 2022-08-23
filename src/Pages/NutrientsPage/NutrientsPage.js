@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "./NutrientsPage.css";
 import {useNavigate} from "react-router-dom";
-import NutrientForm from "../../Components/NutrientsPage/NutrientForm";
+import NutrientInputContainer from "../../Components/NutrientsPage/NutrientInputContainer";
 
 function NutrientsPage(props) {
 
@@ -58,18 +58,17 @@ function NutrientsPage(props) {
     return (
         <div className="nutrientsPage">
             <form onSubmit={handleOnSubmit}>
+                <NutrientInputContainer nutrientName="Calories" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                                        minimizeLength={minimizeLength} minInputID="minCalories" maxInputID="maxCalories" maxValue={1200}/>
 
-                <NutrientForm nutrientName="Calories" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
-                              minimizeLength={minimizeLength} minInputID="minCalories" maxInputID="maxCalories" maxValue={1200}/>
+                <NutrientInputContainer nutrientName="Protein" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                                        minimizeLength={minimizeLength} minInputID="minProtein" maxInputID="maxProtein" maxValue={105}/>
 
-                <NutrientForm nutrientName="Protein" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
-                              minimizeLength={minimizeLength} minInputID="minProtein" maxInputID="maxProtein" maxValue={105}/>
+                <NutrientInputContainer nutrientName="Carbs" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                                        minimizeLength={minimizeLength} minInputID="minCarbs" maxInputID="maxCarbs" maxValue={119}/>
 
-                <NutrientForm nutrientName="Carbs" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
-                              minimizeLength={minimizeLength} minInputID="minCarbs" maxInputID="maxCarbs" maxValue={119}/>
-
-                <NutrientForm nutrientName="Fat" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
-                              minimizeLength={minimizeLength} minInputID="minFat" maxInputID="maxFat" maxValue={100}/>
+                <NutrientInputContainer nutrientName="Fat" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
+                                        minimizeLength={minimizeLength} minInputID="minFat" maxInputID="maxFat" maxValue={100}/>
 
                 <button className="findRecipeButton" type="submit">Find Recipe</button>
             </form>

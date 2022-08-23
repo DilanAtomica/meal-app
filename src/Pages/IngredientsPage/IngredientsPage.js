@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import "./IngredientsPage.css";
-import { TiDelete } from 'react-icons/ti';
-import {AiOutlinePlus} from 'react-icons/ai'
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import SearchContainer from "../../Components/IngredientsPage/SearchContainer";
+import AddedIngredientsContainer from "../../Components/IngredientsPage/AddedIngredientsContainer";
 
 function IngredientsPage(props) {
 
@@ -89,30 +89,11 @@ function IngredientsPage(props) {
         <div className="ingredientsPage">
             <div className="ingredientsContainer">
                 <h1>Add your ingredients</h1>
-                <div className="searchContainer">
-                    <input value={searchInput} onChange={getIngredient} type="text" placeholder="Add your ingredients..." />
-                    <div className="autoCompletedIngredients">
-                        {searchedIngredients?.map(ingredient => (
-                            <button data-name={ingredient.name}
-                                    data-image={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient.image}
-                                    onClick={addIngredient} key={ingredient.name} className="addIngredientButton">
-                                <span className="addIngredientIcon"><AiOutlinePlus /></span>{ingredient.name}
-                                <img src={"https://spoonacular.com/cdn/ingredients_100x100/" + ingredient.image} />
-                            </button>
-                        ))}
-                    </div>
-                </div>
-                <div className="addedIngredients">
-                    {addedIngredients.map(ingredient => (
-                        <div key={ingredient.name} className="ingredient">
-                            <img src={ingredient.image} />
-                            <div className="ingredientTag">
-                                {ingredient.name}<button data-name={ingredient.name} onClick={removeIngredient} type="button" className="deleteIcon"><TiDelete /></button>
-                            </div>
-                        </div>
-                    ))}
 
-                </div>
+                <SearchContainer getIngredient={getIngredient} searchInput={searchInput} searchedIngredients={searchedIngredients}
+                                 addIngredient={addIngredient}/>
+
+                <AddedIngredientsContainer addedIngredients={addedIngredients} removeIngredient={removeIngredient} />
 
                 <button onClick={getRecipes} className="findRecipeButton">Find Recipe</button>
             </div>
