@@ -62,7 +62,7 @@ function RecipeInfoPage(props) {
 
     return (
         <div className="recipeInfoPage">
-            <img className="recipeImage" src={recipeInfo?.image || noImage} />
+            <img alt={recipeInfo?.title} className="recipeImage" src={recipeInfo?.image || noImage} />
 
             <RecipeTagsContainer recipeInfo={recipeInfo} />
 

@@ -10,7 +10,7 @@ function NeededItemsContainer({servingSize, recipeInfo, recipeEquipment, changeS
 
     return (
         <div className="neededItemsContainer">
-            <h2 className="neededIngredientsTitle">Ingredients/Equipment</h2>
+            <h2 className="neededIngredientsTitle">Ingredients & Equipment</h2>
 
             <h3 className="servingSizeTitle">Servings</h3>
 

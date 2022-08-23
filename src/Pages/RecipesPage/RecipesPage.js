@@ -3,6 +3,8 @@ import "./RecipesPage.css";
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import RecipesByIngredients from "../../Components/RecipesPage/RecipesByIngredients";
+import RecipesByNutrients from "../../Components/RecipesPage/RecipesByNutrients";
 
 function RecipesPage(props) {
 
@@ -48,30 +50,20 @@ function RecipesPage(props) {
         console.log(apiUrl);
     }, []);
 
+    const navigateToRecipe = (recipeID) => {
+        navigate("/recipe/" + recipeID);
+    }
+
     return (
         <div className="recipesPage">
             <div className="recipesContainer">
 
                 {recipesByIngredients?.map(recipe => (
-                    <div onClick={() => navigate("/recipe/" + recipe?.id)} key={recipe?.id} className="recipe">
-                        <img src={recipe?.image} />
-                        <div className="recipeInfo">
-                            <h2>{recipe?.title}</h2>
-                            <p>This recipe includes {recipe?.usedIngredientCount} of your ingredients</p>
-                            <p>You're missing {recipe?.missedIngredientCount} ingredients for this recipe</p>
-                        </div>
-                    </div>
+                    <RecipesByIngredients recipe={recipe} navigateToRecipe={navigateToRecipe} />
                 ))}
 
                 {recipesByNutrients?.map(recipe => (
-                    <div onClick={() => navigate("/recipe/" + recipe?.id)} key={recipe?.id} className="recipe">
-                        <img src={recipe?.image} />
-                        <div className="recipeInfo">
-                            <h2>{recipe?.title}</h2>
-                            <p>{recipe?.protein} protein, {recipe?.carbs} carbs, {recipe?.fat} fats</p>
-                            <p>This recipe contains {recipe?.calories} calories.</p>
-                        </div>
-                    </div>
+                    <RecipesByNutrients recipe={recipe} navigateToRecipe={navigateToRecipe} />
                 ))}
 
 
