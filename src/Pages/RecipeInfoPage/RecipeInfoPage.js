@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import "./RecipeInfoPage.css";
 import {useParams} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useContext} from "react";
 import axios from "axios";
-import {AiOutlineMinus} from "react-icons/ai"
-import {AiOutlinePlus} from "react-icons/ai"
 import noImage from "../../images/noImage.png";
 import RecipeTagsContainer from "../../Components/RecipeInfoPage/RecipeTagsContainer";
 import RecipeDescriptionContainer from "../../Components/RecipeInfoPage/RecipeDescriptionContainer";
 import NeededItemsContainer from "../../Components/RecipeInfoPage/NeededItemsContainer";
 import InstructionsContainer from "../../Components/RecipeInfoPage/InstructionsContainer";
+import {AppContext} from "../../App";
 
 function RecipeInfoPage(props) {
+
+    const {activateLoader, deActiveLoader} = useContext(AppContext);
 
     let { recipeID } = useParams();
 
@@ -22,24 +23,27 @@ function RecipeInfoPage(props) {
     const [nutrition, setNutrition] = useState([]);
 
     useEffect(() => {
-        const fetchRecipeInfo = async() => {
-            try {
-                const API = "https://api.spoonacular.com/recipes/" + recipeID +
-                    "/information?includeNutrition=true&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
-                const response = await axios.get(API);
-                setRecipeInfo(response.data);
-                setInstructions(response.data.analyzedInstructions[0].steps);
-                setNutrition(response.data.nutrition.nutrients);
-                setServingSize(response.data.servings);
-                fetchEquipments(response.data.id);
-
-            } catch {
-                console.log("Error")
-            }
-        }
+        activateLoader();
         fetchRecipeInfo();
 
     }, []);
+
+    const fetchRecipeInfo = async() => {
+        try {
+            const API = "https://api.spoonacular.com/recipes/" + recipeID +
+                "/information?includeNutrition=true&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
+            const response = await axios.get(API);
+            setRecipeInfo(response.data);
+            setInstructions(response.data.analyzedInstructions[0].steps);
+            setNutrition(response.data.nutrition.nutrients);
+            setServingSize(response.data.servings);
+            fetchEquipments(response.data.id);
+            deActiveLoader();
+
+        } catch {
+            console.log("Error")
+        }
+    }
 
     const fetchEquipments = async(recipeID) => {
         const API = "https://api.spoonacular.com/recipes/" + recipeID +

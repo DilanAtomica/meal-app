@@ -18,3 +18,16 @@ body {
   background-color: #F2F2F2;
 }
 
+.loadingSpinner {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  outline: 5px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 10;
+  visibility: hidden;
+
+}
