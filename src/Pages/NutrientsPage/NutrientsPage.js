@@ -56,7 +56,7 @@ function NutrientsPage(props) {
 
 
     return (
-        <div className="nutrientsPage">
+        <main className="nutrientsPage">
             <form onSubmit={handleOnSubmit}>
                 <NutrientInputContainer nutrientName="Calories" setMinInputValue={setMinInputValue} setMaxInputValue={setMaxInputValue}
                                         minimizeLength={minimizeLength} minInputID="minCalories" maxInputID="maxCalories" maxValue={1200}/>
@@ -72,7 +72,7 @@ function NutrientsPage(props) {
 
                 <button className="findRecipeButton" type="submit">Find Recipe</button>
             </form>
-        </div>
+        </main>
     );
 }
 
