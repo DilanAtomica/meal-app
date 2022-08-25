@@ -67,4 +67,20 @@
     color: #205B00;
 }
 
+@media only screen and (max-width: 900px) {
+    .frontPage {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .frontPage-startButtons > button {
+        width: 7.5rem;
+    }
+
+    .frontPage-startButtons > span {
+        font-size: 1.7rem;
+    }
+}
+
 
