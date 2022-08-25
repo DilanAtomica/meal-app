@@ -15,17 +15,16 @@ function NavBar(props) {
     const {userScreenWidth} = useContext(AppContext);
 
     return (
-        <div className="navBar">
-            <div className="innerNavBar">
-                <img onClick={() => navigate("/")} src={userScreenWidth > 450 ? MealMeLogo : smallMealMeLogo} />
-                <div className="innerNavBar-searchBar">
+        <header className="navBar">
+            <nav className="innerNavBar">
+                <img alt="logo" onClick={() => navigate("/")} src={userScreenWidth > 450 ? MealMeLogo : smallMealMeLogo} />
+                <form className="innerNavBar-searchBar">
                     <input placeholder="Search for recipe here!" className="searchBar" type="text" />
-                    <button type="button"><AiOutlineSearch className="searchIcon" /></button>
-                </div>
+                    <button type="submit"><AiOutlineSearch className="searchIcon" /></button>
+                </form>
                 <button type="button"><FiUser /></button>
-
-            </div>
-        </div>
+            </nav>
+        </header>
     );
 }
 
