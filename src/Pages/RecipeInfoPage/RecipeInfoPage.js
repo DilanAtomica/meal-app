@@ -23,9 +23,9 @@ function RecipeInfoPage(props) {
     const [nutrition, setNutrition] = useState([]);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         activateLoader();
         fetchRecipeInfo();
-
     }, []);
 
     const fetchRecipeInfo = async() => {

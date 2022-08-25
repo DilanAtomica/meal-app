@@ -13,7 +13,7 @@ export const AppContext = createContext();
 
 function App() {
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const activateLoader = () => {
         setLoading(true);

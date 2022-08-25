@@ -19,6 +19,7 @@ function RecipesPage(props) {
 
     useEffect(() => {
         activateLoader();
+        window.scrollTo(0, 0);
 
         if(apiUrl.includes("Protein") || apiUrl.includes("Carbs") || apiUrl.includes("Calories") ||
             apiUrl.includes("Fat")) {
