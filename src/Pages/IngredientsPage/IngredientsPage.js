@@ -86,8 +86,8 @@ function IngredientsPage(props) {
     }
 
     return (
-        <div className="ingredientsPage">
-            <div className="ingredientsContainer">
+        <main className="ingredientsPage">
+            <section className="ingredientsContainer">
                 <h1>Add your ingredients</h1>
 
                 <SearchContainer getIngredient={getIngredient} searchInput={searchInput} searchedIngredients={searchedIngredients}
@@ -95,9 +95,9 @@ function IngredientsPage(props) {
 
                 <AddedIngredientsContainer addedIngredients={addedIngredients} removeIngredient={removeIngredient} />
 
-                <button onClick={getRecipes} className="findRecipeButton">Find Recipe</button>
-            </div>
-        </div>
+                <button type="button" onClick={getRecipes} className="findRecipeButton">Find Recipe</button>
+            </section>
+        </main>
     );
 }
 

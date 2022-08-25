@@ -12,9 +12,10 @@ function AddedIngredientsContainer({addedIngredients, removeIngredient}) {
         <div className="addedIngredientsContainer">
             {addedIngredients.map(ingredient => (
                 <div key={ingredient.name} className="ingredient">
-                    <img src={ingredient.image} />
+                    <img alt={ingredient?.name} src={ingredient.image} />
                     <div className="ingredientTag">
-                        {ingredient.name}<button data-name={ingredient.name} onClick={handleOnClick} type="button" className="deleteIcon"><TiDelete /></button>
+                        {ingredient.name}<button data-name={ingredient.name}
+                         onClick={handleOnClick} type="button" className="deleteIcon"><TiDelete /></button>
                     </div>
                 </div>
             ))}
