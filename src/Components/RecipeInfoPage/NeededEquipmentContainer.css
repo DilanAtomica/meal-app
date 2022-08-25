@@ -29,3 +29,16 @@
     width: 12.5rem;
     padding-left: 7.5rem;
 }
+
+
+@media only screen and (max-width: 400px) {
+    .neededEquipmentContainer {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .neededEquipmentContainer {
+        width: 17.5rem;
+    }
+}

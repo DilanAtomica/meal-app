@@ -15,5 +15,16 @@
     margin-top: 5.5rem;
 }
 
+@media only screen and (max-width: 900px) {
+    .recipeInfoPage {
+        width: 100%;
+    }
+}
 
+@media only screen and (max-width: 600px) {
+    .recipeImage {
+        object-fit: contain;
+        height: 20rem;
+    }
+}
 

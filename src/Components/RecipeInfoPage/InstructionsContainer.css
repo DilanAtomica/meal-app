@@ -40,3 +40,20 @@
     font-size: 18px;
     color: #205B00;
 }
+
+@media only screen and (max-width: 700px) {
+    .instructionsContainer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .recipeDescription {
+        font-size: 0.9rem;
+    }
+
+    .instruction > p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

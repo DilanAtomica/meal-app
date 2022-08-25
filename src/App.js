@@ -7,13 +7,27 @@ import RecipesPage from "./Pages/RecipesPage/RecipesPage";
 import RecipeInfoPage from "./Pages/RecipeInfoPage/RecipeInfoPage";
 import NavBar from "./Components/NavBar/NavBar";
 import {Oval} from "react-loader-spinner";
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 
 export const AppContext = createContext();
 
 function App() {
 
     const [loading, setLoading] = useState(false);
+    const [userScreenWidth, setUserScreenWidth] = useState(0);
+
+    useEffect(() => {
+
+        function handleWindowResize() {
+            setUserScreenWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
 
     const activateLoader = () => {
         setLoading(true);
@@ -24,7 +38,7 @@ function App() {
     };
 
   return (
-  <AppContext.Provider value={{loading, activateLoader, deActiveLoader}}>
+  <AppContext.Provider value={{loading, activateLoader, deActiveLoader, userScreenWidth}}>
       <div className="App">
             <div className="loadingSpinner" style={{visibility: loading && "visible"}}>
                 <Oval

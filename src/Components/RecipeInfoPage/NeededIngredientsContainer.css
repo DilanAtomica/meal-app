@@ -37,3 +37,15 @@
     color: #205b00;
     width: 7.5rem;
 }
+
+@media only screen and (max-width: 400px) {
+    .neededIngredientsContainer {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .neededIngredientsContainer {
+        width: 17.5rem;
+    }
+}

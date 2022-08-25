@@ -70,3 +70,26 @@
 .innerNavBar-searchBar > button:hover, .innerNavBar > button:hover {
     color: red;
 }
+
+@media only screen and (max-width: 900px) {
+    .innerNavBar {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .innerNavBar > img {
+        margin: 0 0.5rem;
+    }
+
+    .innerNavBar > button {
+        padding: 0 0.5rem 0 0;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .innerNavBar > img {
+        height: 1.5rem;
+    }
+}
+
