@@ -1,4 +1,4 @@
-.navBar {
+header {
     width: 100%;
     margin: auto;
     height: 5.5rem;
@@ -6,7 +6,7 @@
     z-index: 10;
 }
 
-.innerNavBar {
+nav {
     width: 80%;
     height: 100%;
     margin: auto;
@@ -15,7 +15,7 @@
     background-color: white;
 }
 
-.innerNavBar > img {
+nav > img {
     object-fit: contain;
     width: auto;
     height: 2rem;
@@ -23,14 +23,14 @@
     cursor: pointer;
 }
 
-.innerNavBar-searchBar {
+.navBar-searchBar {
     height: 40px;
     position: relative;
     display: flex;
     flex: 1;
 }
 
-.innerNavBar-searchBar > input {
+.navBar-searchBar > input {
     width: 100%;
     height: 100%;
     padding-left: 10px;
@@ -40,12 +40,12 @@
     font-size: 14px;
 }
 
-.innerNavBar-searchBar > input::placeholder {
+.navBar-searchBar > input::placeholder {
     color: #205B00;
     font-size: 14px;
 }
 
-.innerNavBar-searchBar > button {
+.navBar-searchBar > button {
     position: relative;
     right: 2rem;
     top: 0.25rem;
@@ -57,7 +57,7 @@
     transition: 0.2s;
 }
 
-.innerNavBar > button {
+nav > button {
     font-size: 1.5rem;
     cursor: pointer;
     background: none;
@@ -67,28 +67,28 @@
     transition: 0.2s;
 }
 
-.innerNavBar-searchBar > button:hover, .innerNavBar > button:hover {
+.navBar-searchBar > button:hover, .innerNavBar > button:hover {
     color: red;
 }
 
 @media only screen and (max-width: 900px) {
-    .innerNavBar {
+    nav {
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 550px) {
-    .innerNavBar > img {
+    nav > img {
         margin: 0 0.5rem;
     }
 
-    .innerNavBar > button {
+    nav > button {
         padding: 0 0.5rem 0 0;
     }
 }
 
 @media only screen and (max-width: 340px) {
-    .innerNavBar > img {
+    nav > img {
         height: 1.5rem;
     }
 }

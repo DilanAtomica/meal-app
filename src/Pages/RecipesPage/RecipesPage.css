@@ -54,3 +54,36 @@
     padding-top: 0.5rem;
     color: #205B00;
 }
+
+@media only screen and (max-width: 900px) {
+    .recipesPage {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .recipe {
+        width: 25rem;
+    }
+
+    .recipe > img {
+        height: 6rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .recipe {
+        width: 21rem;
+    }
+
+    .recipe > img {
+        height: 4.5rem;
+    }
+
+    .recipeInfo > h2 {
+        font-size: 0.8rem;
+    }
+    .recipeInfo > p {
+        font-size: 0.7rem;
+    }
+}
