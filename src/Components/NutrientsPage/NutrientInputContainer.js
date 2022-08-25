@@ -1,5 +1,5 @@
 import React from 'react';
-import "./NutrientForm.css";
+import "./NutrientInputContainer.css";
 
 function NutrientInputContainer({nutrientName, setMinInputValue, setMaxInputValue, minimizeLength, minInputID, maxInputID, maxValue}) {
 
