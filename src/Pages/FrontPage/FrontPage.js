@@ -15,16 +15,16 @@ function FrontPage(props) {
     }
 
     return (
-        <div className="frontPage">
-          <div className="frontPage-startContainer">
+        <main className="frontPage">
+          <section className="frontPage-startContainer">
               <h1>Find recipe by...</h1>
               <div className="frontPage-startButtons">
                   <button className="ingredientsButton" onClick={handleOnClick} type="button">Ingredients</button>
                   <span>Or</span>
                   <button className="nutrientsButton" onClick={handleOnClick} type="button">Nutrients</button>
               </div>
-          </div>
-        </div>
+          </section>
+        </main>
     );
 }
 

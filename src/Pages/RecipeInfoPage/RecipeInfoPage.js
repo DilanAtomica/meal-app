@@ -54,7 +54,7 @@ function RecipeInfoPage(props) {
 
     const changeServingSize = (e) => {
         console.log(e.currentTarget.classList[0]);
-        if(e.currentTarget.classList[0] === "servingSize-increase" && servingSize !== 5) {
+        if(e.currentTarget.classList[0] === "servingSize-increase" && servingSize !== 20) {
             setServingSize((prevState => prevState + 1));
         }
 
