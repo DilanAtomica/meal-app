@@ -39,3 +39,26 @@
     background-color: white;
     color: #205B00;
 }
+
+@media only screen and (max-width: 900px) {
+    .ingredientsPage {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .ingredientsContainer {
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .ingredientsContainer {
+        width: 20rem;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .ingredientsContainer {
+        width: 17.5rem;
+    }
+}
