@@ -3,7 +3,6 @@ import "./RecipeInfoPage.css";
 import {useParams} from "react-router-dom";
 import {useEffect, useContext} from "react";
 import axios from "axios";
-import noImage from "../../images/noImage.png";
 import RecipeTagsContainer from "../../Components/RecipeInfoPage/RecipeTagsContainer";
 import RecipeDescriptionContainer from "../../Components/RecipeInfoPage/RecipeDescriptionContainer";
 import NeededItemsContainer from "../../Components/RecipeInfoPage/NeededItemsContainer";
@@ -66,7 +65,7 @@ function RecipeInfoPage(props) {
 
     return (
         <div className="recipeInfoPage">
-            <img alt={recipeInfo?.title} className="recipeImage" src={recipeInfo?.image || noImage} />
+            <img alt={recipeInfo?.title} className="recipeImage" src={recipeInfo?.image} />
 
             <RecipeTagsContainer recipeInfo={recipeInfo} />
 
