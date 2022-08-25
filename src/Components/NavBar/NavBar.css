@@ -4,6 +4,7 @@ header {
     height: 5.5rem;
     position: fixed;
     z-index: 10;
+    background-color: #F2F2F2;
 }
 
 nav {
@@ -72,8 +73,8 @@ nav > button {
 }
 
 @media only screen and (max-width: 900px) {
-    header {
-        background: none;
+    nav {
+        width: 100%;
     }
 }
 
