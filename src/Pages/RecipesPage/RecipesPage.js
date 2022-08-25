@@ -63,8 +63,8 @@ function RecipesPage(props) {
     }
 
     return (
-        <div className="recipesPage">
-            <div className="recipesContainer">
+        <main className="recipesPage">
+            <ul className="recipesContainer">
 
                 {recipesByIngredients?.map(recipe => (
                     <RecipesByIngredients recipe={recipe} navigateToRecipe={navigateToRecipe} />
@@ -75,8 +75,8 @@ function RecipesPage(props) {
                 ))}
 
 
-            </div>
-        </div>
+            </ul>
+        </main>
     );
 }
 
