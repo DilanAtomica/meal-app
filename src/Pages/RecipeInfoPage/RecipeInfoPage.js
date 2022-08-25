@@ -64,7 +64,7 @@ function RecipeInfoPage(props) {
     }
 
     return (
-        <div className="recipeInfoPage">
+        <main className="recipeInfoPage">
             <img alt={recipeInfo?.title} className="recipeImage" src={recipeInfo?.image} />
 
             <RecipeTagsContainer recipeInfo={recipeInfo} />
@@ -75,7 +75,7 @@ function RecipeInfoPage(props) {
                                   servingSize={servingSize} changeServingSize={changeServingSize}/>
 
             <InstructionsContainer instructions={instructions} />
-        </div>
+        </main>
     );
 }
 

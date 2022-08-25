@@ -8,14 +8,14 @@ function RecipesByNutrients({recipe, navigateToRecipe}) {
     }
 
     return (
-        <div onClick={handleOnClick} key={recipe?.id} className="recipe">
-            <img src={recipe?.image} />
+        <li onClick={handleOnClick} className="recipe">
+            <img alt={recipe?.name} src={recipe?.image} />
             <div className="recipeInfo">
                 <h2>{recipe?.title}</h2>
                 <p>{recipe?.protein} protein, {recipe?.carbs} carbs, {recipe?.fat} fats</p>
                 <p>This recipe contains {recipe?.calories} calories.</p>
             </div>
-        </div>
+        </li>
     );
 }
 

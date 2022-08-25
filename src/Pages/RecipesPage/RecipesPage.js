@@ -27,7 +27,6 @@ function RecipesPage(props) {
         } else {
             fetchRecipesByIngredients();
         }
-        console.log(apiUrl);
     }, []);
 
     const fetchRecipesByIngredients = async() => {
@@ -67,11 +66,11 @@ function RecipesPage(props) {
             <ul className="recipesContainer">
 
                 {recipesByIngredients?.map(recipe => (
-                    <RecipesByIngredients recipe={recipe} navigateToRecipe={navigateToRecipe} />
+                    <RecipesByIngredients key={recipe?.id} recipe={recipe} navigateToRecipe={navigateToRecipe} />
                 ))}
 
                 {recipesByNutrients?.map(recipe => (
-                    <RecipesByNutrients recipe={recipe} navigateToRecipe={navigateToRecipe} />
+                    <RecipesByNutrients key={recipe?.id} recipe={recipe} navigateToRecipe={navigateToRecipe} />
                 ))}
 
 

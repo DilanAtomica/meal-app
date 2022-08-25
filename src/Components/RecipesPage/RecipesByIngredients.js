@@ -8,7 +8,7 @@ function RecipesByIngredients({recipe, navigateToRecipe}) {
     }
 
     return (
-        <li onClick={handleOnClick} key={recipe?.id} className="recipe">
+        <li onClick={handleOnClick} className="recipe">
             <img alt={recipe?.title} src={recipe?.image} />
             <div className="recipeInfo">
                 <h2>{recipe?.title}</h2>
