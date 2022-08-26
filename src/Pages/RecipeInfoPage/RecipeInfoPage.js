@@ -20,12 +20,26 @@ function RecipeInfoPage(props) {
     const [servingSize, setServingSize] = useState(1);
     const [instructions, setInstructions] = useState([]);
     const [nutrition, setNutrition] = useState([]);
+    const [favorited, setFavorited] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
         activateLoader();
         fetchRecipeInfo();
     }, []);
+
+    useEffect(() => {
+        updateFavorited();
+        console.log("hey")
+    }, [favorited]);
+
+    const updateFavorited = () => {
+        let recipes = JSON.parse(localStorage.getItem("recipeID"));
+
+        if(recipes !== null) {
+            if(recipes.includes(recipeID)) setFavorited(true);
+        }
+    }
 
     const fetchRecipeInfo = async() => {
         try {
@@ -53,7 +67,6 @@ function RecipeInfoPage(props) {
     }
 
     const changeServingSize = (e) => {
-        console.log(e.currentTarget.classList[0]);
         if(e.currentTarget.classList[0] === "servingSize-increase" && servingSize !== 20) {
             setServingSize((prevState => prevState + 1));
         }
@@ -63,9 +76,26 @@ function RecipeInfoPage(props) {
         }
     }
 
+    const HandleOnFavoriteClick = () => {
+        let recipes = JSON.parse(localStorage.getItem("recipeID"));
+        if(recipes === null || recipes.length === 0) {
+            recipes = [recipeID];
+        }
+        else if(recipes.includes(recipeID)) {
+            recipes = recipes.filter(recipe => recipe !== recipeID);
+        } else {
+            recipes.push(recipeID);
+        }
+        localStorage.setItem("recipeID", JSON.stringify(recipes));
+        setFavorited(!favorited);
+    }
+
     return (
         <main className="recipeInfoPage">
             <img alt={recipeInfo?.title} className="recipeImage" src={recipeInfo?.image} />
+
+            <button onClick={HandleOnFavoriteClick} className="favoriteButton"
+                    type="button">{favorited ? "Remove from Favorites" : "Add to Favorites"}</button>
 
             <RecipeTagsContainer recipeInfo={recipeInfo} />
 

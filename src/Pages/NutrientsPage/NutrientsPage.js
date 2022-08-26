@@ -25,7 +25,6 @@ function NutrientsPage(props) {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         let apiUrl = "";
-        console.log(nutrientsValues.maxProtein)
 
         if(nutrientsValues.minCalories !== 0) apiUrl = apiUrl + "&minCalories=" + nutrientsValues.minCalories;
         if(nutrientsValues.maxCalories !== 0) apiUrl = apiUrl + "&maxCalories=" + nutrientsValues.maxCalories;

@@ -50,8 +50,6 @@ function IngredientsPage(props) {
         const ingredientName = e.currentTarget.getAttribute("data-name");
         const ingredientImage = e.currentTarget.getAttribute("data-image");
         if(ingredientName === null) {
-            console.log(ingredientName);
-            console.log(e.target.getAttribute("data-name"));
             return
         }
 
@@ -73,7 +71,6 @@ function IngredientsPage(props) {
 
     const getRecipes = () => {
         let ingredients = "";
-        console.log(addedIngredients.length)
         for(let i = 0; i < addedIngredients.length; i++) {
             if(i === addedIngredients.length - 1) {
                 ingredients = ingredients + addedIngredients[i].name;

@@ -15,6 +15,28 @@
     margin-top: 5.5rem;
 }
 
+.favoriteButton {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    width: 15rem;
+    display: block;
+    border: 2px solid #205B00;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: white;
+    color: #205B00;
+}
+
+
+
+.favoriteButton:hover {
+    background-color: #205B00;
+    color: white;
+}
+
 @media only screen and (max-width: 900px) {
     .recipeInfoPage {
         width: 100%;
