@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import FrontPage from "./Pages/FrontPage/FrontPage";
 import IngredientsPage from "./Pages/IngredientsPage/IngredientsPage";
 import NutrientsPage from "./Pages/NutrientsPage/NutrientsPage";
@@ -56,7 +56,7 @@ function App() {
                 />
             </div>
 
-          <BrowserRouter>
+          <HashRouter>
               <Routes>
                   <Route path="/" element={<> <NavBar />  <FrontPage /> </>} />
                   <Route path="/ingredients" element={<> <NavBar /> <IngredientsPage /> </>} />
@@ -65,7 +65,7 @@ function App() {
                   <Route path="/recipe/:recipeID" element={<> <NavBar /> <RecipeInfoPage /> </>} />
                   <Route path="/favorites" element={<> <NavBar /> <FavoritesPage /> </>} />
               </Routes>
-          </BrowserRouter>
+          </HashRouter>
       </div>
   </AppContext.Provider>
   );
