@@ -66,11 +66,15 @@ function RecipesPage(props) {
             <ul className="recipesContainer">
 
                 {recipesByIngredients?.map(recipe => (
-                    <RecipesByIngredients key={recipe?.id} recipe={recipe} navigateToRecipe={navigateToRecipe} />
+                    <RecipesByIngredients key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image}
+                                          recipeID={recipe?.id} usedIngredients={recipe?.usedIngredientCount}
+                                          missedIngredients={recipe?.missedIngredientCount} navigateToRecipe={navigateToRecipe} />
                 ))}
 
                 {recipesByNutrients?.map(recipe => (
-                    <RecipesByNutrients key={recipe?.id} recipe={recipe} navigateToRecipe={navigateToRecipe} />
+                    <RecipesByNutrients key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image}
+                                        recipeID={recipe?.id} protein={recipe?.protein} carbs={recipe?.carbs}
+                                        fat={recipe?.fat} calories={recipe?.calories} navigateToRecipe={navigateToRecipe} />
                 ))}
 
 

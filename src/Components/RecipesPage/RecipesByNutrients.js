@@ -1,19 +1,19 @@
 import React from 'react';
 import "./RecipesByNutrients.css";
 
-function RecipesByNutrients({recipe, navigateToRecipe}) {
+function RecipesByNutrients({navigateToRecipe, recipeImage, recipeName, recipeID, carbs, protein, fat, calories}) {
 
     const handleOnClick = () => {
-        navigateToRecipe(recipe?.id);
+        navigateToRecipe(recipeID);
     }
 
     return (
         <li onClick={handleOnClick} className="recipe">
-            <img alt={recipe?.name} src={recipe?.image} />
+            <img alt={recipeName} src={recipeImage} />
             <div className="recipeInfo">
-                <h2>{recipe?.title}</h2>
-                <p>{recipe?.protein} protein, {recipe?.carbs} carbs, {recipe?.fat} fats</p>
-                <p>This recipe contains {recipe?.calories} calories.</p>
+                <h2>{recipeName}</h2>
+                <p>{protein} protein, {carbs} carbs, {fat} fats</p>
+                <p>This recipe contains {calories} calories.</p>
             </div>
         </li>
     );

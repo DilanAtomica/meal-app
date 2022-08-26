@@ -1,19 +1,19 @@
 import React from 'react';
 import "./RecipesByIngredients.css";
 
-function RecipesByIngredients({recipe, navigateToRecipe}) {
+function RecipesByIngredients({navigateToRecipe, recipeName, recipeID, recipeImage, missedIngredients, usedIngredients}) {
 
     const handleOnClick = () => {
-        navigateToRecipe(recipe?.id);
+        navigateToRecipe(recipeID);
     }
 
     return (
         <li onClick={handleOnClick} className="recipe">
-            <img alt={recipe?.title} src={recipe?.image} />
+            <img alt={recipeName} src={recipeImage} />
             <div className="recipeInfo">
-                <h2>{recipe?.title}</h2>
-                <p>This recipe includes {recipe?.usedIngredientCount} of your ingredients</p>
-                <p>You're missing {recipe?.missedIngredientCount} ingredients for this recipe</p>
+                <h2>{recipeName}</h2>
+                <p>This recipe includes {usedIngredients} of your ingredients</p>
+                <p>You're missing {missedIngredients} ingredients for this recipe</p>
             </div>
         </li>
     );
