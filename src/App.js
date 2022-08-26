@@ -8,6 +8,7 @@ import RecipeInfoPage from "./Pages/RecipeInfoPage/RecipeInfoPage";
 import NavBar from "./Components/NavBar/NavBar";
 import {Oval} from "react-loader-spinner";
 import {createContext, useEffect, useState} from "react";
+import FavoritesPage from "./Pages/FavoritesPage/FavoritesPage";
 
 export const AppContext = createContext();
 
@@ -62,6 +63,7 @@ function App() {
                   <Route path="/nutrients" element={<> <NavBar /> <NutrientsPage /> </>} />
                   <Route path="/recipes/:apiUrl" element={<> <NavBar /> <RecipesPage /> </>} />
                   <Route path="/recipe/:recipeID" element={<> <NavBar /> <RecipeInfoPage /> </>} />
+                  <Route path="/favorites" element={<> <NavBar /> <FavoritesPage /> </>} />
               </Routes>
           </BrowserRouter>
       </div>

@@ -1,0 +1,56 @@
+.favoritesPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 80%;
+    margin: auto;
+    background-color: white;
+}
+
+.favoritesPage > h1 {
+    color: #205B00;
+    margin-bottom: 2rem;
+}
+
+.favoritedRecipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 1rem 0;
+}
+
+.favoritedRecipe:hover {
+    transform: scale(1.1);
+}
+
+.favoritedRecipe > img {
+    object-fit: cover;
+    width: auto;
+    height: 13rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.favoritedRecipe > h2 {
+    font-size: 1rem;
+    color: white;
+    background-color: #205B00;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0.25rem 0;
+
+
+}
+
+@media only screen and (max-width: 900px) {
+    .favoritesPage {
+        width: 100%;
+    }
+}

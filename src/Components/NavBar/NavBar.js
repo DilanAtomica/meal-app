@@ -22,7 +22,7 @@ function NavBar(props) {
                     <input placeholder="Search for recipe here!" className="searchBar" type="text" />
                     <button type="submit"><AiOutlineSearch className="searchIcon" /></button>
                 </form>
-                <button type="button"><FiUser /></button>
+                <button onClick={() => navigate("/favorites")} type="button"><FiUser /></button>
             </nav>
         </header>
     );
