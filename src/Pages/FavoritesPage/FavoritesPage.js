@@ -4,6 +4,7 @@ import {useContext} from "react";
 import {AppContext} from "../../App";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import FavoritedRecipe from "../../Components/FavoritesPage/FavoritedRecipe";
 
 function FavoritesPage(props) {
 
@@ -40,17 +41,18 @@ function FavoritesPage(props) {
 
         setFavoriteRecipes(response.data);
         deActiveLoader();
+    }
 
+    const navigateToRecipe = (recipeID) => {
+        navigate("/recipe/" + recipeID);
     }
 
     return (
         <div className="favoritesPage">
-            <h1>Favorited Recipes</h1>
+            <h1>Favorite Recipes</h1>
             {favoriteRecipes?.map(recipe => (
-                <div onClick={() => navigate("/recipe/" + recipe?.id)} key={recipe?.id} className="favoritedRecipe">
-                    <img alt={recipe?.title} src={recipe?.image} />
-                    <h2>{recipe?.title}</h2>
-                </div>
+                <FavoritedRecipe key={recipe?.id} recipeID={recipe?.id} recipeImg={recipe?.image} recipeName={recipe?.title}
+                                 navigateToRecipe={navigateToRecipe}/>
             ))}
         </div>
     );

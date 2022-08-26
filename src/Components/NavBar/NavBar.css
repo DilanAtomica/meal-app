@@ -68,7 +68,7 @@ nav > button {
     transition: 0.2s;
 }
 
-.navBar-searchBar > button:hover, .innerNavBar > button:hover {
+.navBar-searchBar > button:hover, nav > button:hover {
     color: red;
 }
 
