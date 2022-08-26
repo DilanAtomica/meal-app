@@ -1,15 +1,15 @@
 import React from 'react';
 import "./RecipeDescription.css";
 
-function RecipeDescriptionContainer({recipeInfo, nutrition}) {
+function RecipeDescriptionContainer({recipeTitle, recipePrepTime, calories, carbs, fat, protein}) {
     return (
         <section className="recipeDescriptionContainer">
-            <h1 className="recipeName">{recipeInfo?.title}</h1>
-            <span className="recipeDescription">Easy <span>•</span> {recipeInfo?.readyInMinutes} min</span>
-            <span className="recipeDescription">{Math.ceil(nutrition[0]?.amount)} Calories
-                    <span>•</span> {Math.ceil(nutrition[8]?.amount)}g Protein
-                    <span>•</span> {Math.ceil(nutrition[3]?.amount)}g Carbs
-                    <span>•</span> {Math.ceil(nutrition[1]?.amount)}g Fat</span>
+            <h1 className="recipeName">{recipeTitle}</h1>
+            <span className="recipeDescription">Easy <span>•</span> {recipePrepTime} min</span>
+            <span className="recipeDescription">{calories} Calories
+                    <span>•</span> {protein}g Protein
+                    <span>•</span> {carbs}g Carbs
+                    <span>•</span> {fat}g Fat</span>
         </section>
     );
 }

@@ -1,14 +1,12 @@
 import React from 'react';
 import "./NeededEquipmentContainer.css";
+import NeededEquipment from "./NeededEquipment";
 
 function NeededEquipmentContainer({recipeEquipment}) {
     return (
         <section className="neededEquipmentContainer">
             {recipeEquipment?.equipment?.map(equipment => (
-                <div key={equipment?.name}  className="neededEquipment">
-                    <span className="neededEquipment-name">{equipment?.name}</span>
-                    <img alt={equipment?.name} className="neededEquipment-image" src={"https://spoonacular.com/cdn/equipment_100x100/" + equipment?.image} />
-                </div>
+                <NeededEquipment key={equipment?.name} equipmentName={equipment?.name} equipmentImage={equipment?.image} />
             ))}
         </section>
     );

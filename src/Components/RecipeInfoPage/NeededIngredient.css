@@ -1,0 +1,31 @@
+
+.neededIngredient {
+    width: 100%;
+    height: max-content;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.neededIngredient > img {
+    object-fit: contain;
+    width: auto;
+    height: 2rem;
+    min-width: 5rem;
+}
+
+.neededIngredient-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #205b00;
+    width: 12.5rem;
+}
+
+.neededIngredient-amount {
+    text-align: start;
+    font-size: 14px;
+    font-weight: 700;
+    color: #205b00;
+    width: 7.5rem;
+}

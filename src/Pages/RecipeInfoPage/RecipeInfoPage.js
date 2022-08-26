@@ -97,11 +97,14 @@ function RecipeInfoPage(props) {
             <button onClick={HandleOnFavoriteClick} className="favoriteButton"
                     type="button">{favorited ? "Remove from Favorites" : "Add to Favorites"}</button>
 
-            <RecipeTagsContainer recipeInfo={recipeInfo} />
+            <RecipeTagsContainer glutenFree={recipeInfo?.glutenFree} vegan={recipeInfo?.vegan} vegetarian={recipeInfo?.vegetarian}
+                                  dairyFree={recipeInfo?.dairyFree}/>
 
-            <RecipeDescriptionContainer recipeInfo={recipeInfo} nutrition={nutrition}/>
+            <RecipeDescriptionContainer recipeTitle={recipeInfo?.title} recipePrepTime={recipeInfo?.readyInMinutes}
+                                        calories={nutrition[0]?.amount} protein={Math.ceil(nutrition[8]?.amount)}
+                                        carbs={Math.ceil(nutrition[3]?.amount)} fat={Math.ceil(nutrition[1]?.amount)}/>
 
-            <NeededItemsContainer recipeInfo={recipeInfo} recipeEquipment={recipeEquipment} instructions={instructions}
+            <NeededItemsContainer recipeInfo={recipeInfo} recipeEquipment={recipeEquipment}
                                   servingSize={servingSize} changeServingSize={changeServingSize}/>
 
             <InstructionsContainer instructions={instructions} />
