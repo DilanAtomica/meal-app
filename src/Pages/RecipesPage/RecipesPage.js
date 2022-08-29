@@ -3,9 +3,8 @@ import "./RecipesPage.css";
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import RecipesByIngredients from "../../Components/RecipesPage/RecipesByIngredients";
-import RecipesByNutrients from "../../Components/RecipesPage/RecipesByNutrients";
 import {AppContext} from "../../App";
+import Recipe from "../../Components/RecipesPage/Recipe";
 
 function RecipesPage(props) {
 
@@ -16,14 +15,20 @@ function RecipesPage(props) {
 
     const [recipesByIngredients, setRecipesByIngredients] = useState([]);
     const [recipesByNutrients, setRecipesByNutrients] = useState([]);
+    const [recipesBySearch, setRecipesBySearch] = useState([]);
 
     useEffect(() => {
         activateLoader();
         window.scrollTo(0, 0);
+        setRecipesByIngredients([]);
+        setRecipesByNutrients([]);
+        setRecipesBySearch([]);
 
         if(apiUrl.includes("Protein") || apiUrl.includes("Carbs") || apiUrl.includes("Calories") ||
             apiUrl.includes("Fat")) {
             fetchRecipesByNutrients();
+        } else if(apiUrl.includes("search=")) {
+            fetchRecipesBySearch();
         } else {
             fetchRecipesByIngredients();
         }
@@ -57,6 +62,22 @@ function RecipesPage(props) {
         }
     }
 
+    const fetchRecipesBySearch = async() => {
+        try {
+            const searchQuery = apiUrl.slice(7);
+
+            const API = "https://api.spoonacular.com/recipes/complexSearch?query=" + searchQuery
+                + "&apiKey=19cbc6a6b21d4037815a9a3a15f7d294"
+            const response = await axios.get(API);
+            const results = response.data.results;
+            setRecipesBySearch(results);
+            deActiveLoader();
+
+        } catch {
+            console.log("Error")
+        }
+    }
+
     const navigateToRecipe = (recipeID) => {
         navigate("/recipe/" + recipeID);
     }
@@ -66,17 +87,21 @@ function RecipesPage(props) {
             <ul className="recipesContainer">
 
                 {recipesByIngredients?.map(recipe => (
-                    <RecipesByIngredients key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image}
+                    <Recipe key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image}
                                           recipeID={recipe?.id} usedIngredients={recipe?.usedIngredientCount}
                                           missedIngredients={recipe?.missedIngredientCount} navigateToRecipe={navigateToRecipe} />
                 ))}
 
                 {recipesByNutrients?.map(recipe => (
-                    <RecipesByNutrients key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image}
+                    <Recipe key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image}
                                         recipeID={recipe?.id} protein={recipe?.protein} carbs={recipe?.carbs}
                                         fat={recipe?.fat} calories={recipe?.calories} navigateToRecipe={navigateToRecipe} />
                 ))}
 
+
+                {recipesBySearch?.map(recipe => (
+                    <Recipe key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image} />
+                ))}
 
             </ul>
         </main>
