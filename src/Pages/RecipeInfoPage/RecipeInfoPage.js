@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./RecipeInfoPage.css";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useContext} from "react";
 import axios from "axios";
 import RecipeTagsContainer from "../../Components/RecipeInfoPage/RecipeTagsContainer";
@@ -14,6 +14,7 @@ function RecipeInfoPage(props) {
     const {activateLoader, deActiveLoader} = useContext(AppContext);
 
     let { recipeID } = useParams();
+    let navigate = useNavigate();
 
     const [recipeInfo, setRecipeInfo] = useState([]);
     const [recipeEquipment, setRecipeEquipment] = useState([]);
@@ -54,15 +55,21 @@ function RecipeInfoPage(props) {
             deActiveLoader();
 
         } catch {
-            console.log("Error")
+            console.log("Error");
+            navigate("/error");
         }
     }
 
     const fetchEquipments = async(recipeID) => {
-        const API = "https://api.spoonacular.com/recipes/" + recipeID +
-            "/equipmentWidget.json?apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
-        const response = await axios.get(API);
-        setRecipeEquipment(response.data);
+        try {
+            const API = "https://api.spoonacular.com/recipes/" + recipeID +
+                "/equipmentWidget.json?apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
+            const response = await axios.get(API);
+            setRecipeEquipment(response.data);
+        } catch {
+            console.log("Error");
+        }
+
 
     }
 

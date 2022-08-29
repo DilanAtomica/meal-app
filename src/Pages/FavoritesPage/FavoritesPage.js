@@ -22,25 +22,31 @@ function FavoritesPage(props) {
     }, []);
 
     const fetchRecipes = async() => {
-        const recipes = JSON.parse(localStorage.getItem("recipeID"));
+        try {
+            const recipes = JSON.parse(localStorage.getItem("recipeID"));
 
-        if(recipes === null) {
+            if(recipes === null) {
+                deActiveLoader();
+                return
+            }
+
+            let recipeIDs = "";
+
+            for(let i = 0; i < recipes.length; i++) {
+                recipeIDs = recipeIDs + recipes[i] + ",";
+            }
+
+            const API = "https://api.spoonacular.com/recipes/informationBulk?ids=" + recipeIDs +
+                "&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
+            const response = await axios.get(API);
+
+            setFavoriteRecipes(response.data);
             deActiveLoader();
-            return
+        } catch {
+            console.log("Error");
+            navigate("/error");
         }
 
-        let recipeIDs = "";
-
-        for(let i = 0; i < recipes.length; i++) {
-            recipeIDs = recipeIDs + recipes[i] + ",";
-        }
-
-        const API = "https://api.spoonacular.com/recipes/informationBulk?ids=" + recipeIDs +
-            "&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
-        const response = await axios.get(API);
-
-        setFavoriteRecipes(response.data);
-        deActiveLoader();
     }
 
     const navigateToRecipe = (recipeID) => {

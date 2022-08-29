@@ -44,7 +44,8 @@ function RecipesPage(props) {
             deActiveLoader();
 
         } catch {
-            console.log("Error")
+            console.log("Error");
+            navigate("/error");
         }
     }
 
@@ -58,7 +59,8 @@ function RecipesPage(props) {
             deActiveLoader();
 
         } catch {
-            console.log("Error")
+            console.log("Error");
+            navigate("/error");
         }
     }
 
@@ -74,7 +76,8 @@ function RecipesPage(props) {
             deActiveLoader();
 
         } catch {
-            console.log("Error")
+            console.log("Error");
+            navigate("/error");
         }
     }
 

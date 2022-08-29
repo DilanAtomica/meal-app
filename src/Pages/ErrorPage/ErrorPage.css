@@ -1,0 +1,42 @@
+.errorPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 80%;
+    margin: auto;
+    background-color: white;
+}
+
+.errorPage > h1 {
+    color: #205B00;
+    text-align: center;
+}
+
+.errorPage > button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    width: 15rem;
+    display: block;
+    border: 2px solid #205B00;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: white;
+    color: #205B00;
+}
+
+.errorPage > button:hover {
+    background-color: #205B00;
+    color: white;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .errorPage {
+        width: 100%;
+    }
+}

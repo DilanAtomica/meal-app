@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import {Oval} from "react-loader-spinner";
 import {createContext, useEffect, useState} from "react";
 import FavoritesPage from "./Pages/FavoritesPage/FavoritesPage";
+import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 
 export const AppContext = createContext();
 
@@ -64,6 +65,8 @@ function App() {
                   <Route path="/recipes/:apiUrl" element={<> <NavBar /> <RecipesPage /> </>} />
                   <Route path="/recipe/:recipeID" element={<> <NavBar /> <RecipeInfoPage /> </>} />
                   <Route path="/favorites" element={<> <NavBar /> <FavoritesPage /> </>} />
+                  <Route path="/error" element={<> <NavBar /> <ErrorPage /> </>} />
+
               </Routes>
           </HashRouter>
       </div>
