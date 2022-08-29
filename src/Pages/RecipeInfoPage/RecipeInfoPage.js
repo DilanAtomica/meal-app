@@ -108,7 +108,7 @@ function RecipeInfoPage(props) {
                                   dairyFree={recipeInfo?.dairyFree}/>
 
             <RecipeDescriptionContainer recipeTitle={recipeInfo?.title} recipePrepTime={recipeInfo?.readyInMinutes}
-                                        calories={nutrition[0]?.amount} protein={Math.ceil(nutrition[8]?.amount)}
+                                        calories={Math.ceil(nutrition[0]?.amount)} protein={Math.ceil(nutrition[8]?.amount)}
                                         carbs={Math.ceil(nutrition[3]?.amount)} fat={Math.ceil(nutrition[1]?.amount)}/>
 
             <NeededItemsContainer recipeInfo={recipeInfo} recipeEquipment={recipeEquipment}

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./RecipeDescription.css";
+import "./RecipeDescriptionContainer.css";
 
 function RecipeDescriptionContainer({recipeTitle, recipePrepTime, calories, carbs, fat, protein}) {
     return (
