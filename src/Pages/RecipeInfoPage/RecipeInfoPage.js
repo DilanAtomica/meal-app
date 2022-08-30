@@ -47,6 +47,7 @@ function RecipeInfoPage(props) {
             const API = "https://api.spoonacular.com/recipes/" + recipeID +
                 "/information?includeNutrition=true&apiKey=19cbc6a6b21d4037815a9a3a15f7d294";
             const response = await axios.get(API);
+
             setRecipeInfo(response.data);
             setInstructions(response.data.analyzedInstructions[0].steps);
             setNutrition(response.data.nutrition.nutrients);
@@ -56,6 +57,7 @@ function RecipeInfoPage(props) {
 
         } catch {
             console.log("Error");
+            deActiveLoader();
             navigate("/error");
         }
     }

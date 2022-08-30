@@ -44,6 +44,7 @@ function FavoritesPage(props) {
             deActiveLoader();
         } catch {
             console.log("Error");
+            deActiveLoader();
             navigate("/error");
         }
 
