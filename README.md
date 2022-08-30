@@ -1,7 +1,7 @@
-Link to demo
+Link to demo<br>
 http://DilanAtomica.github.io/meal-app
 
-About Project
+About Project<br>
 This is a web application that you can use to find recipes based on either the ingredients in your
 fridge, or maybe you want to find a recipe with a set amount of calories, protein, carbs and fat.
 The project is made with React and the data on the recipes are taken from Spoonacular's public API.
