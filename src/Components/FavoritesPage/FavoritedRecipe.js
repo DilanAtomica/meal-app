@@ -10,7 +10,7 @@ function FavoritedRecipe({recipeName, recipeID, recipeImg, navigateToRecipe}) {
     return (
         <div onClick={handleOnClick} className="favoritedRecipe">
             <img alt={recipeName} src={recipeImg} />
-            <h2>recipeName</h2>
+            <h2>{recipeName}</h2>
         </div>
     );
 }
