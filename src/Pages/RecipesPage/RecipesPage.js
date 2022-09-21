@@ -106,7 +106,8 @@ function RecipesPage(props) {
 
 
                 {recipesBySearch?.map(recipe => (
-                    <Recipe key={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image} />
+                    <Recipe key={recipe?.id} recipeID={recipe?.id} recipeName={recipe?.title} recipeImage={recipe?.image}
+                            navigateToRecipe={navigateToRecipe} />
                 ))}
 
             </ul>
